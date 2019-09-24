@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+  <head> </head>
+
+  <body>
+    <form action="save.php" method="post">
+      <br />
+      <label for="name">name:</label>
+      <input type="text" required="required" name="name" />
+
+      <br />
+      <br />
+
+      <label for="age">age:</label>
+      <input type="radio" name="age" value="18" />18
+      <input type="radio" name="age" value="19" />19-35
+      <input type="radio" name="age" value="36" />36-48
+      <input type="radio" name="age" value="49" />>49
+
+      <br />
+      <br />
+
+      <label for="profession">profession:</label>
+      <select name="profession">
+        <option value="plumber">plumber</option>
+        <option value="teacher">teacher</option>
+        <option value="cleaner">cleaning lady</option>
+        <option value="doctor">doctor</option>
+      </select>
+
+      <br />
+      <br />
+
+      <label for="profession">profession:</label>
+      <select name="interests">
+        <option value="swim">swiming</option>
+        <option value="banana" selected>Banana</option>
+        <option value="tomato">cooking</option>
+        <option value="apple">gaming</option>
+      </select>
+
+      <br />
+      <br />
+
+      <label for="how">how did you found our site?</label>
+
+      <textarea name="how">write something here</textarea>
+      <br />
+      <br />
+      <input type="submit" value="Send" />
+    </form>
+  </body>
+</html>
