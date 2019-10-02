@@ -1,0 +1,126 @@
+body{
+    background-color:#EDEFF0;
+}
+
+header {
+    background-color: #046DD5;
+    border-bottom-style: solid;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    color: white;
+    font-family: Verdana;
+    font-size: 80%;
+    line-height: 0.5;
+}
+
+header h2{
+    font-size: 95%;
+    line-height: 0.8;
+}
+
+#related{
+    background-color: #2A2F33;
+    font-family: verdana;
+    color:white;
+    padding-top: 15px;
+    padding-right: 30px;
+    padding-bottom: 15px;
+    padding-left: 25px;
+    
+}
+
+#related p:first-letter{
+    font-size:100%;
+    font-weight: normal;
+}
+
+
+#related p{
+    font-family: Georgia;
+    font-size:90%;
+    font-weight: normal;
+    font-size:100%;
+
+}
+
+#related a{
+    font-family: Georgia;
+    font-family: verdana;
+    font-size:95%;
+}
+
+a:link, a:active, a:visited{
+    text-decoration: none;
+    color: white;
+}
+
+#menu a:link, #menu a:active,#menu  a:visited{
+    text-decoration: none;
+    color: black;
+}
+
+#menu > ul{
+    color: #2A2F33;
+    font-family: verdana;
+    background-color:white;
+    text-align: center;
+    list-style-type: none;
+    line-height: 3.5;
+    font-weight: bold;
+}
+
+/*-----------linhas com diferentes cores na lista-------*/
+
+
+#menu li:first-child {
+border-top: 6px solid #E1493E; 
+}
+
+#menu li:nth-child(2){
+    border-top: 6px solid #8ABA56; 
+}
+
+#menu li:nth-child(3){
+    border-top: 6px solid #5B4282; 
+}
+
+#menu li:nth-child(4){
+    border-top: 6px solid  #FF8932; 
+}
+
+#menu li:nth-child(5){
+    border-top: 6px solid #19B6E9; 
+}
+
+#menu li:nth-child(6){
+    border-top: 6px solid #E84C8B; 
+}
+/*------------------------------------------------------*/
+
+p:first-letter{
+    font-weight: bold;
+    font-size:200%;
+}
+
+img{
+    max-width: 100%;
+  height: auto;
+}
+
+footer{
+    background-color: #F4655F;
+    color: white;
+    font-family: Verdana;
+    padding:1em;
+    height: 10px;
+    font-size:80%
+}
+
+footer p{
+    background-color: #2A2F33;
+    color: white;
+    font-family: Georgia;
+    padding:1em;
+   
+}
