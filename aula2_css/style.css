@@ -6,9 +6,10 @@ body{
  
 }
 
-#menu input, #menu label{
-    visibility: collapse;
+#menu input{
+    display: none;
 }
+
 header{
     background-color: #046DD5;
     border-bottom-style: solid;
@@ -19,6 +20,7 @@ header{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 80%;
     line-height: 0.5;
+    
 }
 
 img{
@@ -46,8 +48,11 @@ header h2{
     line-height: 0.8;
 }
 
+
+
 #related{
     background-color: #2A2F33;
+    margin-bottom: 10px;
     font-family: verdana;
     color:white;
     padding-top: 15px;
@@ -95,6 +100,12 @@ a:link, a:active, a:visited{
     list-style-type: none;
     line-height: 3.5;
     font-weight: bold;
+    
+}
+
+nav > ul{
+    padding:0;
+    margin:0 auto;
 }
 
 /*-----------linhas com diferentes cores na lista-------*/
@@ -133,16 +144,43 @@ p:first-letter{
 footer{
     background-color: #F4655F;
     color: white;
+    margin-bottom:10px;
+    margin-top:10px;
     font-family: Verdana;
     padding:1em;
     height: 10px;
-    font-size:80%
+    font-size:80%;
+    width:100%;
 }
 
-footer p{
+.comments:after{
+    content: " comments";
+    text-decoration: underline;
+
+}
+.tags:before {
+   content: " ";
+}
+
+.tags a{
+    text-decoration: underline;
+ 
+   }
+.comments{
+    text-decoration: underline;
+}
+
+
+body > :last-child{
     background-color: #2A2F33;
     color: white;
-    font-family: Georgia;
-    padding:1em;
-   
+    margin-bottom:10px;
+    margin-top:10px;
+    font-family: Verdana;
+    padding:20px;
+    height: 10px;
+    font-size:80%;
+    width:99%;
+    line-height: 0;
+    margin-left:-2px;
 }
