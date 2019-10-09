@@ -5,10 +5,10 @@ body{
     margin-top:10px;
  
 }
+    #menu input{
+        display: none;
+    }
 
-#menu input{
-    display: none;
-}
 
 header{
     background-color: #046DD5;
