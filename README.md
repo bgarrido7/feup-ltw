@@ -6,7 +6,7 @@ This repository contains all the Labs done in the course Linguagens e Tecnologia
 
 All the course's information can be viewed [here](https://web.fe.up.pt/~arestivo/page/courses/2019/ltw/)
 
-##languages used:
+### Languages Used:
 
 *HTML
 *CSS
