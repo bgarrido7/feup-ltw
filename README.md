@@ -4,7 +4,14 @@ This repository contains all the Labs done in the course Linguagens e Tecnologia
 
 ## Course Information
 
-All the course's information can be viewed [here](https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=436447).
+All the course's information can be viewed [here](https://web.fe.up.pt/~arestivo/page/courses/2019/ltw/)
+
+##languages used:
+
+*HTML
+*CSS
+*PHP
+*JavaScript
 
 
 ## Authors
