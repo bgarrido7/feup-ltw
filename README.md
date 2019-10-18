@@ -8,10 +8,10 @@ All the course's information can be viewed [here](https://web.fe.up.pt/~arestivo
 
 ### Languages Used:
 
-*HTML
-*CSS
-*PHP
-*JavaScript
+* HTML
+* CSS
+* PHP
+* JavaScript
 
 
 ## Authors
