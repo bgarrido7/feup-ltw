@@ -19,7 +19,7 @@ All the course's information can be viewed [here](https://web.fe.up.pt/~arestivo
 Create a website where owners can list their houses and apartments for tourists to rent
 
 **color pallet used:**
-<img src="https://github.com/bgarrido7/FEUP_LTW/blob/master/Final%20Project/mockups/colors.jpg">
+<img src="https://github.com/bgarrido7/FEUP_LTW/blob/master/Final%20Project/mockups/colors.png">
 
 ## Authors
 
