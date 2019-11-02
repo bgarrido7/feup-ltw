@@ -1,4 +1,4 @@
-# FEUP_LTW
+# feup-ltw
 
 This repository contains all the Labs done in the course Linguagens e Tecnologias Web, a course choosen as  **Minor** in the Integrated Master's Degree in Informatics and Computing Engineering @ **FEUP**
 
