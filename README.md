@@ -24,5 +24,5 @@ Create a website where owners can list their houses and apartments for tourists 
 ### Authors
 
 * **Beatriz Garrido** - [bgarrido7](https://github.com/bgarrido7)
-* **Mariana Soares ** - [marianacpsoares](github.com/marianacpsoares)
-* **Lima** - [LimzPimz](github.com/LimzPimz)
+* **Mariana Soares** - [marianacpsoares](https://github.com/marianacpsoares)
+* **Lima** - [LimzPimz](https://github.com/LimzPimz)
