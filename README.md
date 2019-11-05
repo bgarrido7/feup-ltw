@@ -21,6 +21,8 @@ Create a website where owners can list their houses and apartments for tourists 
 **color pallet used:**
 <img src="https://github.com/bgarrido7/FEUP_LTW/blob/master/Final%20Project/mockups/colors.png">
 
-## Authors
+### Authors
 
 * **Beatriz Garrido** - [bgarrido7](https://github.com/bgarrido7)
+* **Mariana Soares ** - [marianacpsoares](github.com/marianacpsoares)
+* **Lima** - [LimzPimz](github.com/LimzPimz)
