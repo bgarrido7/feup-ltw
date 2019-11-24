@@ -1,0 +1,102 @@
+body {
+  --main-color: #e91e63;
+  --light-text-color: #EEE;
+  --dark-text-color: #333;
+
+  width: 60em;
+  max-width: 100%;
+  margin: 1em auto;
+}
+
+body > header {
+  background-color: var(--main-color);
+  padding: 1em;
+}
+
+body > header a {
+  color: var(--light-text-color);
+  text-decoration: none;
+}
+
+#recipes {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 1em;
+}
+
+#recipes .recipe h2 {
+  text-align: center;
+}
+
+.recipe a {
+  text-decoration: none;
+  color: var(--dark-text-color);
+}
+
+.recipe .ingredients ul {
+  padding: 0;
+  list-style-type: none;
+
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.recipe .ingredients li {
+  padding: 1em;
+  margin: 1em;
+
+  background-color: var(--main-color);
+  color: var(--light-text-color);  
+}
+
+.recipe .steps ul {
+  padding: 0;
+  list-style-type: none;
+
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.recipe .steps li {
+  padding: 0.5em 1em;
+  counter-reset: ul;
+  counter-increment: li;
+  max-width: 16em;
+
+  background-color: var(--dark-text-color);
+  margin: 1em;
+  padding: 1em;
+
+  color: var(--light-text-color);
+} 
+
+.recipe .steps li::before {
+  content: counter(li) ".";
+  padding: 0.2em;
+  margin-bottom: 0.5em;
+  font-size: 1.5em;
+  display: block;
+  color: var(--light-text-color);
+  background-color: var(--main-color)
+}
+
+#recipe form {
+  display: grid;
+  width: 30em;
+  margin: 1em auto;
+}
+
+#recipe form label {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  margin: 1em;
+  align-items: center;
+}
+
+#recipe form input[type=submit] {
+  justify-self: end;
+  margin: 1em; 
+}

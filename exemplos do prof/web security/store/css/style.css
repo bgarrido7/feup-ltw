@@ -1,0 +1,90 @@
+body {
+  width: 50em;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #9C27B0;
+  color: white;
+  padding: 3em;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav {
+  background-color: #BA68C8;
+  padding: 1em 2em;
+}
+
+nav ul {
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline;
+  border-right: 1px solid #9C27B0;
+  padding: 0 1em;
+}
+
+nav li:last-child {
+  border: none;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+#content {
+  background-color: #E1BEE7;
+  padding: 3em;
+}
+
+#content h2 {
+  margin: 0;
+  color: #424242;
+}
+
+#content ul {
+  padding: 0;
+  margin: 0;
+}
+
+#content li {
+  display: block;
+  background-color: #424242;
+  margin: 1em 0;
+  padding: 2em;
+  color: white;
+}
+
+#content li a {
+  color: white;
+}
+
+#content .products li *{
+  vertical-align: middle;
+}
+
+footer {
+  background-color: #9C27B0;
+  color: white;
+  padding: 1em 3em;
+}
+
+form label {
+  display: block;
+  width: 10em;
+  margin-top: 1em;
+}
+
+nav form {
+  float: right;
+}
+
+nav input[type=text], nav input[type=password]{
+  width: 10em;
+}
