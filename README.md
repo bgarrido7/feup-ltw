@@ -18,11 +18,6 @@ All the course's information can be viewed [here](https://web.fe.up.pt/~arestivo
 
 Create a website where owners can list their houses and apartments for tourists to rent
 
-**color pallet used:**
+**booklog:**
+
 <img src="https://github.com/bgarrido7/FEUP_LTW/blob/master/Final%20Project/mockups/brandbook.png">
-
-### Authors
-
-* **Beatriz Garrido** - [bgarrido7](https://github.com/bgarrido7)
-* **Mariana Soares** - [marianacpsoares](https://github.com/marianacpsoares)
-* **Pedro Lima** - [LimzPimz](https://github.com/LimzPimz)
