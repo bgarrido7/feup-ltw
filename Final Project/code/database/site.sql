@@ -1,5 +1,13 @@
 PRAGMA foreign_keys = ON;
 
+.mode columns
+.headers on
+.nullvalue NULL
+
+BEGIN TRANSACTION;
+
+DROP TABLE IF EXISTS Users;
+
 CREATE TABLE Users(
 	userID INTEGER PRIMARY KEY,
 	name TEXT NOT NULL,
@@ -8,6 +16,9 @@ CREATE TABLE Users(
 	email TEXT NOT NULL,
 	pictureID INTEGER REFERENCES Pictures(pictureID)
 );
+
+DROP TABLE IF EXISTS Chats;
+
 CREATE TABLE Chats(
 	chatID INTEGER PRIMARY KEY,
 	touristID INTEGER REFERENCES Users(userID) NOT NULL,
@@ -15,6 +26,9 @@ CREATE TABLE Chats(
 	--Unique constraint on the foreign key pair?
 	UNIQUE(touristID, ownerID)
 );
+
+DROP TABLE IF EXISTS Messages;
+
 CREATE TABLE Messages(
 	messageID INTEGER PRIMARY KEY,
 	senderID INTEGER REFERENCES Users(userID) NOT NULL,
@@ -23,11 +37,18 @@ CREATE TABLE Messages(
 	messageText TEXT NOT NULL,
 	isRead INTEGER
 );
+
+DROP TABLE IF EXISTS Notifications;
+
 CREATE TABLE Notifications(
 	notificationID INTEGER PRIMARY KEY,
 	userID INTEGER REFERENCES Users(userID) NOT NULL,
 	isRead INTEGER
 ); -- add implementations.
+
+
+DROP TABLE IF EXISTS Houses;
+
 CREATE TABLE Houses(
 	houseID INTEGER PRIMARY KEY,
 	name TEXT NOT NULL,
@@ -36,6 +57,9 @@ CREATE TABLE Houses(
 	description TEXT
 	--house features.
 );
+
+DROP TABLE IF EXISTS Review;
+
 CREATE TABLE Review(
 	houseID INTEGER REFERENCES Houses(houseID) NOT NULL,
 	userID INTEGER REFERENCES Users(userID) NOT NULL,
@@ -44,17 +68,26 @@ CREATE TABLE Review(
 	ownerReply TEXT,
 	PRIMARY KEY (houseID, userID)
 );
+
+DROP TABLE IF EXISTS Pictures;
+
 CREATE TABLE Pictures(
 	pictureID INTEGER PRIMARY KEY,
 	userID INTEGER NOT NULL REFERENCES Users(userID),
 	picture BLOB,
 	houseID INTEGER NOT NULL REFERENCES Houses(houseID)
 );
+
+DROP TABLE IF EXISTS Favourites;
+
 CREATE TABLE Favourites(
 	userID INTEGER NOT NULL REFERENCES Users(userID),
 	houseID INTEGER NOT NULL REFERENCES Houses(houseID),
 	PRIMARY KEY (houseID, userID)
 );
+
+DROP TABLE IF EXISTS Reservations;
+
 CREATE TABLE Reservations(
 	touristID INTEGER NOT NULL REFERENCES Users(userID),
 	houseID INTEGER NOT NULL REFERENCES Houses(houseID),
@@ -63,3 +96,5 @@ CREATE TABLE Reservations(
 	guests INTEGER,
 	PRIMARY KEY (touristID,houseID)
 )
+
+COMMIT TRANSACTION;
