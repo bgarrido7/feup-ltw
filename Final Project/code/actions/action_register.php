@@ -3,8 +3,16 @@
 include_once('../includes/init.php');
 include_once('../database/user.php');
 
+echo $_POST['name'];
+echo $_POST['pword'];
+echo $_POST['bday'];
+echo $_POST['email'];
 
-if (!$name || !$pword || !$bday || !$email || !$repeatPword) {
+createUser($_POST['name'], $_POST['pword'], $_POST['bday'], $_POST['email']);
+
+
+/*
+if (!$_POST['name'] || !$pword || !$bday || !$email || !$repeatPword) {
     $_SESSION['ERROR'] = 'All fields are mandatory!';
   //  header("Location: register.php");
 
@@ -33,5 +41,5 @@ else if (($userID = createUser($_POST['name'], $_POST['pword'], $_POST['bday'], 
       $_SESSION['ERROR'] = 'ERROR';
   //    header("Location:".$_SERVER['HTTP_REFERER']."");
  }
-
+*/
 ?>

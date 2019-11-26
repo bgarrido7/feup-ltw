@@ -20,14 +20,14 @@
   <section id="register">
 
    <h1>Register for an Account:</h1>
-   <form action="../actions/action_register.php" method="post" enctype="multipart/form-data">
+   <form action="../code/actions/action_register.php" method="post" enctype="multipart/form-data">
     Username: <input type="text" name="name" /><br />
     Email: <input type="text" name="email" /><br />
     Password: <input type="password" name="pword" /><br />
     Repeat Password: <input type="password" name="repeatPword"/> <br/>
     Birthday: <input type="date" value="2019-12-17" name="bday"><br/>
-    Profile Picture:<input type="file" name="profilePic"> <br/>    
-    <input type="submit" value="Register" />
+  <!--  Profile Picture:<input type="file" name="profilePic"> <br/>    
+   --> <input type="submit" value="Register" />
 
  </form>
  </section>

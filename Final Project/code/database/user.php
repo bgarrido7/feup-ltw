@@ -15,7 +15,7 @@ function PasswordsMatch($username, $password) {
     }
   }
 
-function createUser($name, $pword, $bday, $email, $profilePhoto) {
+function createUser($name, $pword, $bday, $email) {
     $pwordhashed = hash('sha256', $pword);
     global $dbh;
     try {
@@ -24,17 +24,21 @@ function createUser($name, $pword, $bday, $email, $profilePhoto) {
   	  $stmt->bindParam(':password', $pwordhashed);
   	  $stmt->bindParam(':birthday', $bday);
         $stmt->bindParam(':email', $email);
+        echo "sucess";
         
       if($stmt->execute()){
-        $id = getID($username);
+        $id = getID($name);
         return $id;
       }
       else
         return -1;
-    }catch(PDOException $e) {
+    
+  }
+  catch(PDOException $e) {
       
       return -1;
     }
+    
 } 
 
 function duplicateEmail($email) {

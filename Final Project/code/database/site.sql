@@ -1,11 +1,5 @@
 PRAGMA foreign_keys = ON;
 
-.mode columns
-.headers on
-.nullvalue NULL
-
-BEGIN TRANSACTION;
-
 DROP TABLE IF EXISTS Users;
 
 CREATE TABLE Users(
@@ -97,4 +91,3 @@ CREATE TABLE Reservations(
 	PRIMARY KEY (touristID,houseID)
 )
 
-COMMIT TRANSACTION;
