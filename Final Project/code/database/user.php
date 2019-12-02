@@ -1,8 +1,30 @@
 <?php
 
-function PasswordsMatch($username, $password) {
+//======================================================
+//retorna sempre certo
+function isLoginCorrect($email, $pword) {
+  global $dbh;
+
+  try {
+    $stmt = $dbh->prepare('SELECT * FROM Users WHERE email = ? AND password = ?');
+    $stmt->execute(array($email,  hash('sha256', $pword)));
+
+
+    if($stmt->fetch() !== false) {
+      return 1;//getID($username);
+    }
+    else return -1;
+  } 
+  catch(PDOException $e) {
+    return -1;
+  }
+
+}
+
+
+function PasswordsMatch($name, $pword) {
     global $dbh;
-    $passwordhashed = hash('sha256', $password);
+    $passwordhashed = hash('sha256', $pword);
     try {
       $stmt = $dbh->prepare('SELECT * FROM user WHERE Username = ? AND Password = ?');
       $stmt->execute(array($username, $passwordhashed));
@@ -27,7 +49,8 @@ function PasswordsMatch($username, $password) {
       return -1;
     }
   }
-
+  //================================================================
+//esta funciona
 function createUser($name, $pword, $bday, $email) {
     $pwordhashed = hash('sha256', $pword);
     global $dbh;

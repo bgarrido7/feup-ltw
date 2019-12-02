@@ -14,20 +14,13 @@
 include_once('../includes/init.php');
 include_once('../database/user.php');
 
-echo $_POST['name']; 
-echo $_POST['pword'];
-echo $_POST['bday'];
-echo $_POST['email'];
-
 $userID = createUser($_POST['name'], $_POST['pword'], $_POST['bday'], $_POST['email']);
-echo "ah\n";
+
 if($userID != -1){
-    echo "registation sucesfull";
-    header("Location: error.html");
+    header("Location: ../homepage.php");
 }
 else{
-echo "error\n";
-header("Location: index.php");
+header("Location: ../pages/error.php");
 }
 /*
 if (!$_POST['name'] || !$pword || !$bday || !$email || !$repeatPword) {

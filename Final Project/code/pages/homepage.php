@@ -1,7 +1,5 @@
-<!DOCTYPE html>
-<html>
 
-  <head>
+<head>
     <title>Jūkyo</title>
     <meta charset="utf-8">
     <link rel="shortcut icon" href="images/site/logo.svg" />
@@ -11,9 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
-  <body>
 
-  <p>go back my friend, you screwd up
+  <p>login done successfully bitch!</br>
 
-  <a href="../index.php">homepage</a>
-</body>
+
+
+<a href="https://www.google.com/">logout</a>

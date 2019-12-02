@@ -19,16 +19,16 @@
         <h1><a href="index.php">Jūkyo</a></h1>
         <i class="fa fa-home"></i> </br>
         <i class="fa fa-hotel"></i>(0)</br>
-        <a href="list_cart.php"><i class="fa fa-search"></i> search</a>
+      <!--  <a href="list_cart.php"><i class="fa fa-search"></i> search</a>
         <a href="list_cart.php"><i class="fas fa-torii-gate"></i> </br>
-      </div>
+     --> </div>
 
       <div id="user">
-        <form action="action_login.php" method="post">
-          <input type="text" placeholder="username" name="username">
-          <input type="password" placeholder="password" name="password">
+        <form action="actions/action_login.php" method="post">
+          <input type="text" placeholder="email" name="email">
+          <input type="password" placeholder="password" name="pword">
           <div>
-            <input type="submit" value="Login">
+            <input type="submit" value="Login"></br></br>
             <a href="register.php">Register</a>
           </div>
         </form>
