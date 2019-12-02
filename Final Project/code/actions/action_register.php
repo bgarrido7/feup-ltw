@@ -15,12 +15,13 @@ include_once('../includes/init.php');
 include_once('../database/user.php');
 
 $userID = createUser($_POST['name'], $_POST['pword'], $_POST['bday'], $_POST['email']);
-
+echo $userID ;
 if($userID != -1){
     header("Location: ../homepage.php");
 }
 else{
-header("Location: ../pages/error.php");
+    echo "error";
+//header("Location: ../pages/error.php");
 }
 /*
 if (!$_POST['name'] || !$pword || !$bday || !$email || !$repeatPword) {

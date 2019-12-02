@@ -2,8 +2,8 @@
   session_start();
  
  
-  function setCurrentUser($name) {
-    $_SESSION['name'] = $name;
+  function setCurrentUser($email) {
+    $_SESSION['email'] = $email;
 }
 
 
