@@ -9,9 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
-
   <p>login done successfully bitch!</br>
 
 
 
-<a href="https://www.google.com/">logout</a>
+<a href="../actions/action_logout.php">logout</a>

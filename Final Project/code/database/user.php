@@ -2,12 +2,12 @@
 
 //======================================================
 //retorna sempre certo
-function isLoginCorrect($email, $pword) {
+function isLoginCorrect($name, $pword) {
   global $dbh;
 
   try {
     $stmt = $dbh->prepare('SELECT * FROM Users WHERE email = ? AND password = ?');
-    $stmt->execute(array($email,  hash('sha256', $pword)));
+    $stmt->execute(array($name,  hash('sha256', $pword)));
 
 
     if($stmt->fetch() !== false) {
@@ -21,21 +21,6 @@ function isLoginCorrect($email, $pword) {
 
 }
 
-
-function PasswordsMatch($name, $pword) {
-    global $dbh;
-    $passwordhashed = hash('sha256', $pword);
-    try {
-      $stmt = $dbh->prepare('SELECT * FROM user WHERE Username = ? AND Password = ?');
-      $stmt->execute(array($username, $passwordhashed));
-      if($stmt->fetch() !== false) {
-        return getID($username);
-      }
-      else return -1;
-    } catch(PDOException $e) {
-      return -1;
-    }
-  }
   function getID($name) {
     global $dbh;
     try {
@@ -50,7 +35,7 @@ function PasswordsMatch($name, $pword) {
     }
   }
   //================================================================
-//esta funciona
+//retorna smp falso, mas registo fica feito na db
 function createUser($name, $pword, $bday, $email) {
     $pwordhashed = hash('sha256', $pword);
     global $dbh;
@@ -59,7 +44,7 @@ function createUser($name, $pword, $bday, $email) {
   	  $stmt->bindParam(':name', $name);
   	  $stmt->bindParam(':password', $pwordhashed);
   	  $stmt->bindParam(':birthday', $bday);
-        $stmt->bindParam(':email', $email);
+      $stmt->bindParam(':email', $email);
       
         
       if($stmt->execute()){
@@ -78,6 +63,23 @@ function createUser($name, $pword, $bday, $email) {
     
 } 
 
+
+/*
+function PasswordsMatch($name, $pword) {
+    global $dbh;
+    $passwordhashed = hash('sha256', $pword);
+    try {
+      $stmt = $dbh->prepare('SELECT * FROM user WHERE Username = ? AND Password = ?');
+      $stmt->execute(array($username, $passwordhashed));
+      if($stmt->fetch() !== false) {
+        return getID($username);
+      }
+      else return -1;
+    } catch(PDOException $e) {
+      return -1;
+    }
+  }
+
 function duplicateEmail($email) {
         global $dbh;
         try {
@@ -89,5 +91,5 @@ function duplicateEmail($email) {
           return true;
         }
 }
-
+*/
     ?>
