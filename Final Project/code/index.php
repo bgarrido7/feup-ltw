@@ -19,8 +19,8 @@
         <h1><a href="index.php">Jūkyo</a></h1>
         <i class="fa fa-home"></i> </br>
         <i class="fa fa-hotel"></i>(0)</br>
-        <a href="list_cart.php"><i class="fa fa-search"></i> search</a></br>
-        <a href="list_cart.php"><i class="fas fa-torii-gate"></i> (0)</a></br>
+        <a href="list_cart.php"><i class="fa fa-search"></i> search</a>
+        <a href="list_cart.php"><i class="fas fa-torii-gate"></i> </br>
       </div>
 
       <div id="user">
@@ -34,38 +34,10 @@
         </form>
       </div>
     </header>
-
-    <nav id="menu">
-      <ul>
-        <li><a href="index.php">Products</a></li>
-        <li><a href="services.php">Services</a></li>
-        <li><a href="about.php">About Us</a></li>
-        <li><a href="contacts.php">Contacts</a></li>
-      </ul>
-    </nav>
-
-    <section id="categories">
-      <h2>Categories</h2>
-      <ul>
-        <li><a href="?cat_id=1">Books</a></li>
-        <li><a href="?cat_id=2">Clothing</a></li>
-        <li><a href="?cat_id=3">Electronics</a></li>
-        <li><a href="?cat_id=4">Fruits</a></li>
-        <li><a href="?cat_id=5">Home Care</a></li>
-        <li><a href="?cat_id=6">Sports</a></li>
-        <li><a href="?cat_id=7">Vegetables</a></li>
-      </ul>
-    </section>
-
-    <section id="products">
-      <article>
-        <h2>Apple</h2>
-        <p class="description">Especially high in vitamin C, apples also provide vitamin A as a powerful antioxidant to help resist infection and scavenge free radicals that cause inflammation. They also contain a significant amount of fiber, which can help prevent absorption of LDL (bad) cholesterol.</p>
-        <img src="images/products/1.png">
-        <p class="price">2.89€/kg</p>
-        <a href="action_add_to_cart.php?id=1">Buy</a>
-      </article>
-      
+</br>
+</br>
+</br>
+</br>
     <footer>
       &copy; 2019 @ FEUP
     </footer>

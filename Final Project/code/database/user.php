@@ -14,6 +14,19 @@ function PasswordsMatch($username, $password) {
       return -1;
     }
   }
+  function getID($name) {
+    global $dbh;
+    try {
+      $stmt = $dbh->prepare('SELECT ID FROM Users WHERE name = ?');
+      $stmt->execute(array($name));
+      if($row = $stmt->fetch()){
+        return $row['userID'];
+      }
+    
+    }catch(PDOException $e) {
+      return -1;
+    }
+  }
 
 function createUser($name, $pword, $bday, $email) {
     $pwordhashed = hash('sha256', $pword);
@@ -24,15 +37,16 @@ function createUser($name, $pword, $bday, $email) {
   	  $stmt->bindParam(':password', $pwordhashed);
   	  $stmt->bindParam(':birthday', $bday);
         $stmt->bindParam(':email', $email);
-        echo "sucess";
+      
         
       if($stmt->execute()){
         $id = getID($name);
         return $id;
+
       }
-      else
+      else{
         return -1;
-    
+      }
   }
   catch(PDOException $e) {
       
