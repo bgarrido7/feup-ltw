@@ -28,7 +28,7 @@
   <section id="register">
 
    <h1>Register for an Account:</h1>
-   <form action="../code/actions/action_register.php" method="post" enctype="multipart/form-data">
+   <form action="../code/actions/action_register.php" method="post">
     Username: <input type="text" name="name" /><br />
     Email: <input type="text" name="email" /><br />
     Password: <input type="password" name="pword" /><br />

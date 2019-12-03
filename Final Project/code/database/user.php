@@ -1,44 +1,39 @@
 <?php
-//funciona mas tem bug
 function createUser($name, $pword, $bday, $email) {
-    $pwordhashed = hash('sha256', $pword);
+    $pwordhashed = hash('sha256', $pword);   
     global $dbh;
-    try {
   	  $stmt = $dbh->prepare('INSERT INTO Users(name, password, birthday, email) VALUES (:name,:password,:birthday,:email)');
   	  $stmt->bindParam(':name', $name);
   	  $stmt->bindParam(':password', $pwordhashed);
   	  $stmt->bindParam(':birthday', $bday);
       $stmt->bindParam(':email', $email);
-      
-      if($stmt->execute()){ //isto é sempre false idk why mas dados ficam gravados na db
-        return getID($email);
+      $result = $stmt->execute();
+
+      if($result){ 
+        getID($email);
       }
       else{
         return -1;
       }
+    
   }
-  catch(PDOException $e) { 
-      return -1;
-    }
-} 
+ 
+//} 
 //======================================================
-//funciona mas tem bug
 function isLoginCorrect($email, $pword) {
   global $dbh;
+  $pwordhashed = hash('sha256', $pword);   
 
-  try {
-    $stmt = $dbh->prepare('SELECT * FROM Users WHERE email = ? AND password = ?');
-    $stmt->execute(array($email,  hash('sha256', $pword)));
-
-    if($stmt->fetch() !== false) { //isto é sempre true idk why
-      return 1;
-      //return getID($username);
+    $stmt = $dbh->prepare('SELECT * FROM Users WHERE email = ? AND name = ?');
+    $stmt->execute(array($email, $pword));   
+    $result = $stmt->fetch();
+    return $stmt->fetch() !== false;
+    /*    if($result === false){ //nao encontrou user
+        return -1;
     }
-    else return -1;
-  } 
-  catch(PDOException $e) {
-    return -1;
-  }
+    else 
+      return getID($email);
+*/
 }
 //======================================================
 
