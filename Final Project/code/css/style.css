@@ -6,8 +6,21 @@
     background-color: #203354;
     color: white;
 }
+#info a:visited{
+    color: white;
+}
 
-
+#menu-bar a:visited{
+    color: white;
+}
+#menu-bar{
+    background-color: #203354;
+    color: white;
+    
+}
+body{
+    margin: 0;
+}
 
 footer {
     padding-left: 20px;
