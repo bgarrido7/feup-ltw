@@ -26,7 +26,7 @@ function isLoginCorrect($email, $pword) {
 
     $stmt = $dbh->prepare('SELECT * FROM Users WHERE email = ? AND name = ?');
     $stmt->execute(array($email, $pword));   
-    $result = $stmt->fetch();
+  //  $result = $stmt->fetch();
     return $stmt->fetch() !== false;
     /*    if($result === false){ //nao encontrou user
         return -1;

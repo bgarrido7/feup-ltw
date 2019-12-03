@@ -15,7 +15,7 @@ INSERT INTO Users(name, password, birthday, email)
 VALUES ("Cercei Lanister", 'A9C3C1F7674502331A5AD3E54592D3EB2FC39CF78BB908004777FF4AC89119E4', '1964-11-5', "lanister_c@gmail.com");
 
 INSERT INTO Houses(name, location, dailyPrice, description, pool,cableTV, Wifi, AC, kitchen)   
-VALUES("country house in the suburbs","California","100","perfect for families and old people",1,1,1,0,1) ;
+VALUES("country house in the suburbs","USA","100","perfect for families and old people",1,1,1,0,1) ;
 
 INSERT INTO Houses(name, location, dailyPrice, description, pool,cableTV, Wifi, AC, kitchen)   
 VALUES("small house in the Snow","Switzerland","50","for people who like snow",0,0,1,1,1) ;

@@ -1,7 +1,5 @@
-<!DOCTYPE html>
 <html>
-
-  <head>
+<head>
     <title>Jūkyo</title>
     <meta charset="utf-8">
     <link rel="shortcut icon" href="images/site/logo.svg" />
@@ -10,10 +8,9 @@
    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" > 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-
   <body>
 
-    <header>
+    <header >
       <div id="info">
         <img src="images/site/logo.png" alt="logo" width="50px">
         <h1><a href="index.php">Jūkyo</a></h1>
@@ -34,13 +31,6 @@
         </form>
       </div>
     </header>
-</br>
-</br>
-</br>
-</br>
-    <footer>
-      &copy; 2019 @ FEUP
-    </footer>
 
-  </body>
-</html>
+<?php include_once('template/common/footer.php');
+?>

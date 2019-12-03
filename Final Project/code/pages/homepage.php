@@ -1,5 +1,5 @@
 <?php
-//include_once('../templates/common/header.php');
+include_once('../template/common/header.php');
 ?>
 
   <p>login done successfully bitch!</br>
@@ -14,3 +14,7 @@
 </div>
 
 <a href="../actions/action_logout.php">logout</a>
+
+<?php
+include_once("../template/common/footer.php");
+?>

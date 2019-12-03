@@ -1,19 +1,17 @@
 <?php
-include_once('../templates/common/header.php');
+include_once('../template/common/header.php');
 ?>
-
-  <section id="adition">
+<section id="adition">
    <form action="../actions/action_addHouse.php" method="post" enctype="multipart/form-data">
     Name: <input type="text" name="name" /><br />
     <label> Location:
         <select name="city">
-            <option value="CA">California</option>
-            <option value="SW">Switzerland</option>
-            <option value="SerraEstrela">Serra da Estrela</option>
-            <option value="Poland">Poland</option>
-            <option value="Hawai">Hawai</option>
-            <option value="Australia">Australia</option>
-      
+            <option value="usa">USA</option>
+            <option value="sw">Switzerland</option>
+            <option value="pt">Portugal</option>
+            <option value="poland">Poland</option>
+            <option value="croatia">Croatia</option>
+            <option value="au">Australia</option>
         </select>
                 </label>
     Price per day: <input type="number" name="price"/> <br/>
@@ -31,3 +29,6 @@ include_once('../templates/common/header.php');
 
  </form>
  </section>
+ <?php
+include_once("../template/common/footer.php");
+?>
