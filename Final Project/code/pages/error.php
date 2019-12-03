@@ -13,7 +13,7 @@
 
   <body>
 
-  <p>go back my friend, you screwd up
+  <p>go back my friend, you screwed up
 
   <a href="../index.php">homepage</a>
 </body>

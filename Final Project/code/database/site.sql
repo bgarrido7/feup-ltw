@@ -46,10 +46,14 @@ DROP TABLE IF EXISTS Houses;
 CREATE TABLE Houses(
 	houseID INTEGER PRIMARY KEY,
 	name TEXT NOT NULL,
-	--location
+	location TEXT NOT NULL,
 	dailyPrice REAL NOT NULL,
-	description TEXT
-	--house features.
+	description TEXT NOT NULL,
+	pool BIT NOT NULL,
+	cableTV BIT NOT NULL,
+	Wifi BIT NOT NULL,
+	AC BIT NOT NULL,
+	kitchen Bit NOT NULL
 );
 
 DROP TABLE IF EXISTS Review;
