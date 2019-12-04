@@ -1,8 +1,12 @@
 <?php
+include_once('../includes/init.php');
 include_once('../template/common/header.php');
 ?>
 
-  <p>login done successfully bitch!</br>
+  <p>Welcome 
+<?php
+echo htmlentities($_SESSION['email']);
+?>!</br>
 
 <div>
   <ul><a href="search.php">Search Houses</a></ul>

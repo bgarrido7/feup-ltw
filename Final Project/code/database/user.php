@@ -22,18 +22,34 @@ function createUser($name, $pword, $bday, $email) {
 //======================================================
 function isLoginCorrect($email, $pword) {
   global $dbh;
-  $pwordhashed = hash('sha256', $pword);   
-
-    $stmt = $dbh->prepare('SELECT * FROM Users WHERE email = ? AND name = ?');
-    $stmt->execute(array($email, $pword));   
-  //  $result = $stmt->fetch();
-    return $stmt->fetch() !== false;
-    /*    if($result === false){ //nao encontrou user
-        return -1;
+  $passwordhashed = hash('sha256', $pword);
+  
+  $stmt = $dbh->prepare('SELECT * FROM Users WHERE email = ? ');
+    $stmt->execute(array($email));
+    $user=$stmt->fetch();
+ 
+   $result = strcmp($user['password'], $passwordhashed);
+    if($user!==false){
+      if(!$result)
+        return 1;
+      else
+        return 0;
     }
-    else 
+    else
+      return -1;
+     /* 
+    if($stmt->fetch() !== false) {
       return getID($email);
-*/
+    }
+    else return -1;
+
+    /*--------------------------------------------------------*/
+    /*
+    global $conn;
+    $stmt = $conn->prepare('SELECT * FROM users WHERE username = ?');
+    $stmt->execute(array($username));
+    $user = $stmt->fetch();
+    return $user !== false && password_verify($password, $user['password']);*/
 }
 //======================================================
 
@@ -51,7 +67,24 @@ function isLoginCorrect($email, $pword) {
       return -1;
     }
   }
-/*
+  /*
+  function getUserName($email) {
+    global $dbh;
+    try {
+      $stmt = $dbh->prepare('SELECT ID FROM Users WHERE email = ?');
+      $stmt->execute(array($email));
+      if($row = $stmt->fetch()){
+        return $row['name'];
+      }
+    
+    }catch(PDOException $e) {
+      return -1;
+    }
+  }*/
+
+
+
+  /*
 function PasswordsMatch($name, $pword) {
     global $dbh;
     $passwordhashed = hash('sha256', $pword);

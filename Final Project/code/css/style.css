@@ -1,29 +1,58 @@
 
 #info{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    font-size: xx-large;
 }
-#info{
-    background-color: #203354;
-    color: white;
+#user a:link{
+    text-decoration: underline;
 }
 #info a:visited{
-    color: white;
+    color: black;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#info a:link{
+    color: black;
+    text-decoration: none;
+}
+#intro{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
-#menu-bar a:visited{
+#menu-bar a:visited,a:link{
     color: white;
+    text-decoration: none;
+
 }
 #menu-bar{
     background-color: #203354;
     color: white;
+    text-decoration: none;  
+    font-size: 200%;  
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+#menu-bar a:visited{
+    padding-bottom: 50%;
     
 }
 body{
     margin: 0;
 }
 
+#menu-bar img{
+    vertical-align: -webkit-baseline-middle;
+
+}
+
 footer {
-    padding-left: 20px;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -31,4 +60,8 @@ footer {
     background-color: #203354;
     color: white;
     text-align: left;
+ }
+
+ footer img{
+     vertical-align: -webkit-baseline-middle;
  }

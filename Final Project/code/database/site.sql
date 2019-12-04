@@ -7,7 +7,7 @@ CREATE TABLE Users(
 	name TEXT NOT NULL,
 	password BLOB NOT NULL,
 	birthday DATE,
-	email TEXT NOT NULL,
+	email TEXT NOT NULL UNIQUE,
 	pictureID INTEGER REFERENCES Pictures(pictureID)
 );
 
