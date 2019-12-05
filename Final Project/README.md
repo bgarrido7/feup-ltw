@@ -1,14 +1,18 @@
-### Languages Used:
+### Technologies Used:
 
 * HTML
 * CSS
 * PHP
 * JavaScript
-* SQLite
+* PDO/SQL (using sqlite)
+
+* Ajax/JSON (hopefully)
 
 ## Final Project
 
 Create a website where owners can list their houses and apartments for tourists to rent
+
+*Frameworks are not allowed*
 
 **screenshots**
 
