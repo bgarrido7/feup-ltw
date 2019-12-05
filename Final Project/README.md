@@ -12,11 +12,6 @@
 
 *Frameworks are not allowed*
 
-**Screenshots**
-
-<img src="https://github.com/bgarrido7/FEUP_LTW/blob/master/Final%20Project/mockups/brandbook.png">
-
-
 ### Features
 
 - [x] User register
@@ -27,3 +22,8 @@
 - [ ] Owner see list of reservations
 - [ ] Tourists search using several criteria (price, location, dates, available, ...)
 - [ ] Tourists rent place
+
+## Screenshots
+
+<img src="https://github.com/bgarrido7/FEUP_LTW/blob/master/Final%20Project/mockups/brandbook.png">
+
