@@ -1,19 +1,16 @@
-### Languages Used:
+### Technologies Used:
 
 * HTML
 * CSS
 * PHP
 * JavaScript
-* SQLite
+* PDO/SQL (using sqlite)
 
 ## Final Project
 
-Create a website where owners can list their houses and apartments for tourists to rent
+**Objective:** Create a website where owners can list their houses and apartments for tourists to rent
 
-**screenshots**
-
-<img src="https://github.com/bgarrido7/FEUP_LTW/blob/master/Final%20Project/mockups/brandbook.png">
-
+*Frameworks are not allowed*
 
 ### Features
 
@@ -25,3 +22,8 @@ Create a website where owners can list their houses and apartments for tourists 
 - [ ] Owner see list of reservations
 - [ ] Tourists search using several criteria (price, location, dates, available, ...)
 - [ ] Tourists rent place
+
+## Screenshots
+
+<img src="https://github.com/bgarrido7/FEUP_LTW/blob/master/Final%20Project/mockups/brandbook.png">
+
