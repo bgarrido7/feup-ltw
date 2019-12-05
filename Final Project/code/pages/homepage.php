@@ -1,11 +1,12 @@
 <?php
 include_once('../includes/init.php');
 include_once('../template/common/header.php');
+include_once('../database/user.php');
 ?>
 
   <p>Welcome 
 <?php
-echo htmlentities($_SESSION['email']);
+getUserName(($_SESSION['email']));
 ?>!</br>
 
 <div>

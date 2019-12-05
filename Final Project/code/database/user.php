@@ -50,22 +50,17 @@ function isLoginCorrect($email, $pword) {
     }
     else
       return -1;
-     /* 
-    if($stmt->fetch() !== false) {
-      return getID($email);
-    }
-    else return -1;
-
-    /*--------------------------------------------------------*/
-    /*
-    global $conn;
-    $stmt = $conn->prepare('SELECT * FROM users WHERE username = ?');
-    $stmt->execute(array($username));
-    $user = $stmt->fetch();
-    return $user !== false && password_verify($password, $user['password']);*/
 }
 //======================================================
 
+function getUserName($email) {
+  global $dbh; 
+  $stmt = $dbh->prepare('SELECT * FROM Users WHERE email = ? ');
+    $stmt->execute(array($email));
+    $user=$stmt->fetch();
+ 
+   echo $user['name'];
+}
 
   function getID($email) {
     global $dbh;
