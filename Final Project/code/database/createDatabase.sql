@@ -7,7 +7,7 @@ CREATE TABLE Users(
 	name TEXT NOT NULL,
 	password BLOB NOT NULL,
 	birthday DATE,
-	email TEXT NOT NULL UNIQUE,
+	email TEXT UNIQUE NOT NULL,
 	pictureID INTEGER REFERENCES Pictures(pictureID)
 );
 
@@ -44,7 +44,7 @@ CREATE TABLE Notifications(
 DROP TABLE IF EXISTS Houses;
 
 CREATE TABLE Houses(
-	houseID INTEGER PRIMARY KEY,
+	houseID INTEGER PRIMARY KEY AUTOINCREMENT,
 	name TEXT NOT NULL,
 	location TEXT NOT NULL,
 	dailyPrice REAL NOT NULL,
@@ -54,6 +54,14 @@ CREATE TABLE Houses(
 	Wifi BIT NOT NULL,
 	AC BIT NOT NULL,
 	kitchen Bit NOT NULL
+);
+
+DROP TABLE IF EXISTS Owners;
+
+CREATE TABLE Owners (
+    userID    INTEGER REFERENCES Users(userID) ON DELETE CASCADE,
+    houseID INTEGER REFERENCES Houses(houseID) ON DELETE CASCADE,
+    PRIMARY KEY (userID, houseID)
 );
 
 DROP TABLE IF EXISTS Review;

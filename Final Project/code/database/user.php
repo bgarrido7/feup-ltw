@@ -12,7 +12,7 @@ function createUser($name, $email, $pword, $repeatPword, $bday) {
 
     if($user!==false) //user already exists
       return -3;
-    if(strcmp($pword,$repeatPword)) //passowrds don't match
+    if(strcmp($pword,$repeatPword)) //passwords don't match
       return -4;
 
     $stmt = $dbh->prepare('INSERT INTO Users(name, password, birthday, email) VALUES (:name,:password,:birthday,:email)');
@@ -80,8 +80,11 @@ function getID($email) {
 //======================================================
 function updateUserInfo($userID, $name){
   global $dbh;
-  $stmt = $dbh->prepare('UPDATE Users SET name = ? WHERE userID = ?');
-  $result = $stmt->execute(array($name, $userID));  
+  $stmt = $dbh->prepare('UPDATE Users SET name = :name WHERE userID = :ID');
+  $stmt->bindParam(':name', $name);
+  $stmt->bindParam(':ID', $userID);
+
+  $result=$stmt->execute();
   if($result)
       return true;
   else{
@@ -97,7 +100,6 @@ function updatePassword($userID ,$pword){
   $stmt->bindParam(':pword', $passwordhashed);
   $stmt->bindParam(':ID', $userID);
 
- // $stmt->bindParam(':pword', $passwordhashed, PDO::PARAM_STR); //conde
   $result=$stmt->execute();
   if($result)
       return true;

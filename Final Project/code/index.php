@@ -22,8 +22,8 @@
 
       <div id="user">
         <form action="actions/action_login.php" method="post">
-          <input type="text" placeholder="email" name="email">
-          <input type="password" placeholder="password" name="pword">
+          <input type="text" placeholder="email" name="email"  required="required">
+          <input type="password" placeholder="password" name="pword"  required="required">
           <div>
             <input type="submit" value="Login"></br></br>
             <a href="register.php">Register</a>

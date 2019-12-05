@@ -15,6 +15,7 @@ include_once('../includes/init.php');
 include_once('../database/user.php');
 
 $userID = createUser($_POST['name'], $_POST['email'], $_POST['pword'],$_POST['repeatPword'], $_POST['bday']);
+
 if($userID == -1){
     echo "error";
     ?>
@@ -33,47 +34,22 @@ else if($userID == -2){
     <a href="../register.php">try again</a>
     <?php
 }
-else if($userID == -3){
-    echo "email already register";
+else if($userID == -3){    
+    //$_SESSION['ERROR'] = 'Duplicated Email';
+    //   header("Location:".$_SERVER['HTTP_REFERER']."");
+    echo "email already register"; 
     ?>
     <a href="../register.php">try again</a>
     <?php
 }
 else{
+    setCurrentUser( getID($_POST['email']), $_POST['email']);
    header("Location: ../pages/homepage.php");
 //header("Location: ../pages/error.php");
-}
-/*
-if (!$_POST['name'] || !$pword || !$bday || !$email || !$repeatPword) {
-    $_SESSION['ERROR'] = 'All fields are mandatory!';
-  //  header("Location: register.php");
-
-}
-else if(duplicateEmail($_POST['email'])){
-    $_SESSION['ERROR'] = 'Duplicated Email';
- //   header("Location:".$_SERVER['HTTP_REFERER']."");
-}
-else if (!(strcmp($pword, $repeatPword))){
-    $_SESSION['ERROR'] = 'Passwords don\'t match';
+//setCurrentUser($userID, $_POST['name']);
 
 }
 
-else if((strlen($pword)*8 < 5){
-    $_SESSION['ERROR'] = 'Password needs to be at least 5 characters long';
-
-}
-
-else if (($userID = createUser($_POST['name'], $_POST['pword'], $_POST['bday'], $_POST['email'])) != -1) {
-      echo 'User Registered successfully';
-     setCurrentUser($userID, $_POST['name']);
- //    header("Location:../index.php");	
- }
- 
- else{
-      $_SESSION['ERROR'] = 'ERROR';
-  //    header("Location:".$_SERVER['HTTP_REFERER']."");
- }
-*/
 
 
 ?>

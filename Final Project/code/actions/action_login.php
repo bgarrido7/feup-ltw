@@ -18,9 +18,11 @@ elseif($result== 0){
 }
   else{ 
 //    header('Location:  ../pages/homepage.php' /*. $_SERVER['HTTP_REFERER']*/);
-    setCurrentUser($result, $_POST['email']);
+    setCurrentUser( getID($email), $_POST['email']);
     header('Location:  ../pages/homepage.php');
  }
+
+
 
   ?>
    

@@ -21,4 +21,13 @@ INSERT INTO Houses(name, location, dailyPrice, description, pool,cableTV, Wifi, 
 VALUES("small house in the Snow","Switzerland","50","for people who like snow",0,0,1,1,1) ;
 
 INSERT INTO Houses(name, location, dailyPrice, description, pool,cableTV, Wifi, AC, kitchen)   
-VALUES("party house for big groups of friends","Poland","20","no neighbours, go crazy, go wild kids",0,0,1,1,1) ;
+VALUES("party house for big groups of friends","Poland","20","no neighbours, go crazy, go wild kids. Perfect for cold nights",0,0,1,1,1) ;
+
+INSERT INTO Houses(name, location, dailyPrice, description, pool,cableTV, Wifi, AC, kitchen)   
+VALUES("summer home","Spain","30","spend your summer vacation on this cozy house with a view to the village",1,1,1,0,1) ;
+
+
+INSERT INTO Owners (userID, houseID) VALUES (1, 1);
+INSERT INTO Owners (userID, houseID) VALUES (2, 2);
+INSERT INTO Owners (userID, houseID) VALUES (1, 3);
+INSERT INTO Owners (userID, houseID) VALUES (1, 4);
