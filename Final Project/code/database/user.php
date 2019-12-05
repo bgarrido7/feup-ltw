@@ -7,12 +7,12 @@ function createUser($name, $email, $pword, $repeatPword, $bday) {
     $stmt->execute(array($email));
     $user=$stmt->fetch();
 
-    if(strpos ($email,'@gmail.com')===false)
+    if(strpos ($email,'@gmail.com')===false) //email not valid
       return -2;
 
-    if($user!==false)
+    if($user!==false) //user already exists
       return -3;
-    if(strcmp($pword,$repeatPword))
+    if(strcmp($pword,$repeatPword)) //passowrds don't match
       return -4;
 
     $stmt = $dbh->prepare('INSERT INTO Users(name, password, birthday, email) VALUES (:name,:password,:birthday,:email)');
@@ -28,10 +28,7 @@ function createUser($name, $email, $pword, $repeatPword, $bday) {
     else{
       return -1;
     }
-  
   }
- 
-//} 
 //======================================================
 function isLoginCorrect($email, $pword) {
   global $dbh;
@@ -61,63 +58,77 @@ function getUserName($email) {
  
    echo $user['name'];
 }
-
-  function getID($email) {
-    global $dbh;
-    try {
-      $stmt = $dbh->prepare('SELECT ID FROM Users WHERE email = ?');
-      $stmt->execute(array($email));
-      if($row = $stmt->fetch()){
-        return $row['userID'];
-      }
-    
-    }catch(PDOException $e) {
-      return -1;
+//======================================================
+function getID($email) {
+  global $dbh;
+  try {
+    $stmt = $dbh->prepare('SELECT ID FROM Users WHERE email = ?');
+    $stmt->execute(array($email));
+    if($row = $stmt->fetch()){
+      return $row['userID'];
     }
+  
+  }catch(PDOException $e) {
+    return -1;
   }
-  /*
-  function getUserName($email) {
-    global $dbh;
-    try {
-      $stmt = $dbh->prepare('SELECT ID FROM Users WHERE email = ?');
-      $stmt->execute(array($email));
-      if($row = $stmt->fetch()){
-        return $row['name'];
-      }
-    
-    }catch(PDOException $e) {
-      return -1;
-    }
-  }*/
-
-
-
-  /*
-function PasswordsMatch($name, $pword) {
-    global $dbh;
-    $passwordhashed = hash('sha256', $pword);
-    try {
-      $stmt = $dbh->prepare('SELECT * FROM user WHERE Username = ? AND Password = ?');
-      $stmt->execute(array($username, $passwordhashed));
-      if($stmt->fetch() !== false) {
-        return getID($username);
-      }
-      else return -1;
-    } catch(PDOException $e) {
-      return -1;
-    }
-  }
-
-function duplicateEmail($email) {
-        global $dbh;
-        try {
-          $stmt = $dbh->prepare('SELECT ID FROM User WHERE email = ?');
-          $stmt->execute(array($email));
-          return $stmt->fetch()  !== false;
-        
-        }catch(PDOException $e) {
-          return true;
-        }
 }
-*/
-    ?>
+
+//======================================================
+updateUserInfo($userID, $name){
+  global $dbh;
+  $stmt = $dbh->prepare('UPDATE Users SET name = ? WHERE ID = ?');
+  $stmt->bindParam(':name', $name);
+  $result = $stmt->execute();  
+
+  if($result)
+      return true;
+  else{
+    return false;
+  }   
+}
+//======================================================
+updatePassword($userID ,$pword){
+  $passwordhashed = hash('sha256', $pword);
+  global $dbh;
+
+  $stmt = $dbh->prepare('UPDATE Users SET password = ? WHERE ID = ?');
+  $stmt->bindParam(':pword', $passwordhashed);
+
+ // $stmt->bindParam(':pword', $passwordhashed, PDO::PARAM_STR); //conde
+  $result=$stmt->execute();
+  if($result)
+      return true;
+  else{
+    return false;
+  }  
+} 
+
+//======================================================
+
+/*-------------------for future implementation---------------------------
+function updateUserPhoto($userID, $photoPath) {
+  global $dbh;
+  try {
+    $stmt = $dbh->prepare('UPDATE User SET Photo = ? WHERE ID = ?');
+    if($stmt->execute(array($photoPath, $userID)))
+        return true;
+    else
+        return false;
+  }catch(PDOException $e) {
+    return false;
+  }
+} 
+
+function getUserPhoto($userID) {
+  global $dbh;
+  try {
+    $stmt = $dbh->prepare('SELECT Photo FROM User WHERE ID = ?');
+    $stmt->execute(array($userID));
+    return $stmt->fetch();
+  
+  }catch(PDOException $e) {
+    return null;
+  }
+}
+---------------------------------------------------------------------------*/
+?>
