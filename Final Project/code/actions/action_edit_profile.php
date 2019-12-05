@@ -3,16 +3,24 @@
     include_once("../database/user.php");
 
     $name = $_POST['name'];
-    $email = $_POST['email'];
+    $email =$_SESSION['email'];
     $pword = $_POST['pword'];
     $repeatPword = $_POST['repeatPword'];
 
-    if(updateUserInfo(getID($email), $name/*, $email)*/)
+if($name!=null){
+    if(updateUserInfo(getID($email), $name)){
+        setCurrentUser(getID($email),$email);
         echo "profile updated with sucess";
+   ?>    
+    <a href="../pages/homepage.php">homepage</a>
+<?php
+    }
     else
         echo "error updating profile";
+}
 
-    if(!strcmp($pword, $repeatPword))
+if($pword!=null){
+    if(strcmp($pword, $repeatPword))
         echo "passwords don't match";
 
     else{
@@ -21,6 +29,10 @@
         else    
             echo "error updating password";
     }
+    ?>    
+    <a href="../pages/homepage.php">homepage</a>
+<?php
+}
 
     /*-----------------------------sofia---------------------------------------------------
     if((isLoginCorrect($_SESSION['email']['name'], $_POST['pword'])) != -1){

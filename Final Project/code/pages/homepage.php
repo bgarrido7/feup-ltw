@@ -7,7 +7,7 @@ include_once('../template/common/header.php');
 
   <p>Welcome 
 <?php
-getUserName(($_SESSION['email']));
+getName(($_SESSION['email']));
 ?>!</br>
 
 <div>

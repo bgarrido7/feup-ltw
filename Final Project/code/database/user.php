@@ -29,6 +29,13 @@ function createUser($name, $email, $pword, $repeatPword, $bday) {
       return -1;
     }
   }
+  //======================================================
+  function getUser($email) {
+    global $dbh;
+      $stmt = $dbh->prepare('SELECT name FROM Users WHERE email= ?');
+      $stmt->execute(array($email));
+      return $stmt->fetch();
+    }
 //======================================================
 function isLoginCorrect($email, $pword) {
   global $dbh;
@@ -37,11 +44,11 @@ function isLoginCorrect($email, $pword) {
   $stmt = $dbh->prepare('SELECT * FROM Users WHERE email = ? ');
     $stmt->execute(array($email));
     $user=$stmt->fetch();
- 
+
    $result = strcmp($user['password'], $passwordhashed);
-    if($user!==false){
+   if($user!==false){
       if(!$result)
-        return 1;
+        return 1;//getID($email); 
       else
         return 0;
     }
@@ -50,7 +57,7 @@ function isLoginCorrect($email, $pword) {
 }
 //======================================================
 
-function getUserName($email) {
+function getName($email) {
   global $dbh; 
   $stmt = $dbh->prepare('SELECT * FROM Users WHERE email = ? ');
     $stmt->execute(array($email));
@@ -61,25 +68,20 @@ function getUserName($email) {
 //======================================================
 function getID($email) {
   global $dbh;
-  try {
-    $stmt = $dbh->prepare('SELECT ID FROM Users WHERE email = ?');
+    $stmt = $dbh->prepare('SELECT userID FROM Users WHERE email = ?');
     $stmt->execute(array($email));
     if($row = $stmt->fetch()){
       return $row['userID'];
     }
   
-  }catch(PDOException $e) {
-    return -1;
-  }
+    
 }
 
 //======================================================
-updateUserInfo($userID, $name){
+function updateUserInfo($userID, $name){
   global $dbh;
-  $stmt = $dbh->prepare('UPDATE Users SET name = ? WHERE ID = ?');
-  $stmt->bindParam(':name', $name);
-  $result = $stmt->execute();  
-
+  $stmt = $dbh->prepare('UPDATE Users SET name = ? WHERE userID = ?');
+  $result = $stmt->execute(array($name, $userID));  
   if($result)
       return true;
   else{
@@ -87,12 +89,13 @@ updateUserInfo($userID, $name){
   }   
 }
 //======================================================
-updatePassword($userID ,$pword){
+function updatePassword($userID ,$pword){
   $passwordhashed = hash('sha256', $pword);
   global $dbh;
 
-  $stmt = $dbh->prepare('UPDATE Users SET password = ? WHERE ID = ?');
+  $stmt = $dbh->prepare('UPDATE Users SET password = :pword WHERE userID = :ID');
   $stmt->bindParam(':pword', $passwordhashed);
+  $stmt->bindParam(':ID', $userID);
 
  // $stmt->bindParam(':pword', $passwordhashed, PDO::PARAM_STR); //conde
   $result=$stmt->execute();

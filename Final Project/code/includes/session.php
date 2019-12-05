@@ -1,19 +1,12 @@
 <?php
   session_start();
- 
- 
-  function setCurrentUser($email) {
+
+
+  function setCurrentUser($userID, $email) {
     $_SESSION['email'] = $email;
-}
-
-
-  //==============código da sofia ==============
-/*
-  function setCurrentUser($userID, $name) {
-    $_SESSION['name'] = $name;
     $_SESSION['userID'] = $userID;
 }
-
+/*
 function getUserID() {
    if(isset($_SESSION['userID'])) {
         return $_SESSION['userID'];
