@@ -20,8 +20,8 @@ Create a website where owners can list their houses and apartments for tourists 
 - [x] User register
 - [x] User scan be simultaneously owner & tourist
 - [x] Login and logout.
-- [x] Edit user's profile.
-- [x] Owner manage places (title, price per day, location, description)
-- [x] Owner see list of reservations
-- [x] Tourists search using several criteria (price, location, dates, available, ...)
-- [x] Tourists rent place
+- [ ] Edit user's profile.
+- [ ] Owner manage places (title, price per day, location, description)
+- [ ] Owner see list of reservations
+- [ ] Tourists search using several criteria (price, location, dates, available, ...)
+- [ ] Tourists rent place
