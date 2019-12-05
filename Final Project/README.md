@@ -6,15 +6,15 @@
 * JavaScript
 * PDO/SQL (using sqlite)
 
-* Ajax/JSON (hopefully)
-
 ## Final Project
+
+**Objective:**
 
 Create a website where owners can list their houses and apartments for tourists to rent
 
 *Frameworks are not allowed*
 
-**screenshots**
+**Screenshots**
 
 <img src="https://github.com/bgarrido7/FEUP_LTW/blob/master/Final%20Project/mockups/brandbook.png">
 
