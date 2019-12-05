@@ -17,7 +17,7 @@
 - [x] User register
 - [x] User scan be simultaneously owner & tourist
 - [x] Login and logout.
-- [ ] Edit user's profile.
+- [x] Edit user's profile.
 - [ ] Owner manage places (title, price per day, location, description)
 - [ ] Owner see list of reservations
 - [ ] Tourists search using several criteria (price, location, dates, available, ...)
