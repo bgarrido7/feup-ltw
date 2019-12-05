@@ -1,21 +1,34 @@
 <?php
-function createUser($name, $pword, $bday, $email) {
+function createUser($name, $email, $pword, $repeatPword, $bday) {
     $pwordhashed = hash('sha256', $pword);   
     global $dbh;
-  	  $stmt = $dbh->prepare('INSERT INTO Users(name, password, birthday, email) VALUES (:name,:password,:birthday,:email)');
-  	  $stmt->bindParam(':name', $name);
-  	  $stmt->bindParam(':password', $pwordhashed);
-  	  $stmt->bindParam(':birthday', $bday);
-      $stmt->bindParam(':email', $email);
-      $result = $stmt->execute();
 
-      if($result){ 
-        getID($email);
-      }
-      else{
-        return -1;
-      }
-    
+    $stmt = $dbh->prepare('SELECT * FROM Users WHERE email = ? ');
+    $stmt->execute(array($email));
+    $user=$stmt->fetch();
+
+    if(strpos ($email,'@gmail.com')===false)
+      return -2;
+
+    if($user!==false)
+      return -3;
+    if(strcmp($pword,$repeatPword))
+      return -4;
+
+    $stmt = $dbh->prepare('INSERT INTO Users(name, password, birthday, email) VALUES (:name,:password,:birthday,:email)');
+    $stmt->bindParam(':name', $name);
+    $stmt->bindParam(':password', $pwordhashed);
+    $stmt->bindParam(':birthday', $bday);
+    $stmt->bindParam(':email', $email);
+    $result = $stmt->execute();
+
+    if($result){ 
+      getID($email);
+    }
+    else{
+      return -1;
+    }
+  
   }
  
 //} 
