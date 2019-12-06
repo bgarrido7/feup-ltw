@@ -29,13 +29,6 @@ function createUser($name, $email, $pword, $repeatPword, $bday) {
       return -1;
     }
   }
-  //======================================================
-  function getUser($email) {
-    global $dbh;
-      $stmt = $dbh->prepare('SELECT name FROM Users WHERE email= ?');
-      $stmt->execute(array($email));
-      return $stmt->fetch();
-    }
 //======================================================
 function isLoginCorrect($email, $pword) {
   global $dbh;
@@ -73,10 +66,7 @@ function getID($email) {
     if($row = $stmt->fetch()){
       return $row['userID'];
     }
-  
-    
 }
-
 //======================================================
 function updateUserInfo($userID, $name){
   global $dbh;
