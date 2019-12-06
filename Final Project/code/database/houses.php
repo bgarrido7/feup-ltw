@@ -76,13 +76,12 @@ function getHouse($houseID) {
         return null;
     }
 }
-//======================================================testar isto ainda
-
-function getOwnerHouses($userID/*, $isArchived*/) {
+//======================================================
+function getOwnerHouses($userID) {
     global $dbh;
     try {
         $stmt = $dbh->prepare('SELECT houseID FROM Owners WHERE userID = ?');
-    $stmt->execute(array($userID/*, $isArchived*/));
+    $stmt->execute(array($userID));
         return $stmt->fetchAll();
 
 
