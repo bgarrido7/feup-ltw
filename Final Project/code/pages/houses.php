@@ -4,12 +4,15 @@ include_once('../includes/init.php');
 include_once('../database/houses.php');
 include_once('../database/user.php');
 
-echo "my houses";
-
+echo nl2br("my houses \n");
+$row=0;
 //imprimir as casas deste owner
+$userID=getID($_SESSION['email']);
+if(getOwnerHouses($userID)!=null)
+$row=(getOwnerHouses($userID)[0]['houseID']);
 
-//getOwner retorna array, getHouse quer só 1 valor, fazer loop maybe?
-print getHouse(getOwnerHouses(getID($_SESSION['email'])));
+if($row!=null)
+    getHouse($row);
 
 ?>
 </br>

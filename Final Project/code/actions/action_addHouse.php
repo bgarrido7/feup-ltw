@@ -40,10 +40,13 @@ $houseID = addHouse(getID($_SESSION['email']), $name,$location,$price,$desc,$poo
     echo "fail";
     echo $result; 
  }
-//  include_once('includes/init.php');
+
+ header("Location: ../pages/homepage.php");
+ //  include_once('includes/init.php');
 //  addHouse($_GET['id']);
 //  header('Location: ' /*. $_SERVER['HTTP_REFERER']*/);
 ?>
  <a href="../pages/homepage.php">homepage</a>
+
 
 

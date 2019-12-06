@@ -67,6 +67,8 @@ function getHouse($houseID) {
         echo $row['Wifi'];
         echo nl2br ("\nAC: ");
         echo $row['AC'];
+        echo nl2br ("\nkitchen: ");
+        echo $row['kitchen'];
         echo nl2br ("\n");
     }
     return 0;
