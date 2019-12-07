@@ -45,6 +45,14 @@ function addOwner($userID, $houseID) {
 }
 //======================================================
 
+function getAllHouses() {
+    global $dbh;
+    $stmt = $dbh->prepare('SELECT * FROM Houses');
+    $stmt->execute();
+    return $stmt->fetchAll();
+}
+//======================================================
+
 function getHouse($houseID) {
     global $dbh;
     try {
