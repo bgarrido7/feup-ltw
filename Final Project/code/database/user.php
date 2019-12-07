@@ -50,12 +50,11 @@ function isLoginCorrect($email, $pword) {
 }
 //======================================================
 
-function getName($email) {
+function getName($id) {
   global $dbh; 
-  $stmt = $dbh->prepare('SELECT * FROM Users WHERE email = ? ');
-    $stmt->execute(array($email));
+  $stmt = $dbh->prepare('SELECT * FROM Users WHERE userID = ? ');
+    $stmt->execute(array($id));
     $user=$stmt->fetch();
- 
    echo $user['name'];
 }
 //======================================================
@@ -63,10 +62,17 @@ function getID($email) {
   global $dbh;
     $stmt = $dbh->prepare('SELECT userID FROM Users WHERE email = ?');
     $stmt->execute(array($email));
-    if($row = $stmt->fetch()){
-      return $row['userID'];
-    }
-}
+    return $stmt->fetch();
+ }
+//======================================================
+
+ function getAge($id) {
+  global $dbh;
+  $stmt = $dbh->prepare('SELECT birthday FROM Users WHERE userID = ?');
+  $stmt->execute(array($id));
+  $result= $stmt->fetch();
+  return (2019 - date('Y',strtotime($result['birthday'])));
+ }
 //======================================================
 function updateUserInfo($userID, $name){
   global $dbh;

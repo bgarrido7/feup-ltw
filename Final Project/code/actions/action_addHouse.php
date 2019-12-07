@@ -29,7 +29,7 @@ $ac=1;
 if(isset($_POST['kitchen']))
 $kitchen=1;
 
-$houseID = addHouse(getID($_SESSION['email']), $name,$location,$price,$desc,$pool,$cable, $wifi, $ac, $kitchen);
+$houseID = addHouse(getID($_SESSION['email'])['userID'], $name,$location,$price,$desc,$pool,$cable, $wifi, $ac, $kitchen);
 
  if($houseID!=-1){
         echo "sucess";
@@ -41,12 +41,11 @@ $houseID = addHouse(getID($_SESSION['email']), $name,$location,$price,$desc,$poo
     echo $result; 
  }
 
- header("Location: ../pages/homepage.php");
+ header("Location: ../pages/myHouses.php");
  //  include_once('includes/init.php');
 //  addHouse($_GET['id']);
 //  header('Location: ' /*. $_SERVER['HTTP_REFERER']*/);
 ?>
- <a href="../pages/homepage.php">homepage</a>
 
 
 

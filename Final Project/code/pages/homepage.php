@@ -7,15 +7,15 @@ include_once('../template/common/header.php');
 
   <p>Welcome 
 <?php
-getName(($_SESSION['email']));
+getName(getID($_SESSION['email'])['userID']);
 ?>!</br>
 
 <div>
   <ul><a href="search.php">Search Houses</a></ul>
-  <ul><a href="myRents.php">Rented Houses</a></ul>
-  <ul><a href="houses.php">My Houses</a></ul>
-  <ul><a href="error.php">Messages</a></ul>
-  <ul><a href="whishlist.php">Whishlist</a></ul>
+  <ul><a href="myReservations.php">Reservations</a></ul>
+  <ul><a href="myHouses.php">My Houses</a></ul>
+  <ul><a href="myRents.php">My Rented Houses</a></ul>
+  <ul><a href="error.php">Whishlist</a></ul>
   <ul><a href="profile.php">My Profile</a></ul>
 </div>
 

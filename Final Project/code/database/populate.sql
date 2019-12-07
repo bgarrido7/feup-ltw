@@ -28,6 +28,18 @@ VALUES("summer home","Spain","30","spend your summer vacation on this cozy house
 
 
 INSERT INTO Owners (userID, houseID) VALUES (1, 1);
-INSERT INTO Owners (userID, houseID) VALUES (2, 2);
+INSERT INTO Owners (userID, houseID) VALUES (3, 2);
 INSERT INTO Owners (userID, houseID) VALUES (1, 3);
 INSERT INTO Owners (userID, houseID) VALUES (1, 4);
+
+
+INSERT INTO Reservations (touristID, houseID, arriveDate, stayLength) 
+VALUES (3, 1, '2020-09-09', 5);
+INSERT INTO Reservations (touristID, houseID, arriveDate, stayLength) 
+VALUES (3, 1, '2020-05-02', 3);
+INSERT INTO Reservations (touristID, houseID, arriveDate, stayLength) 
+VALUES (2, 1, '2019-12-10', 9);
+INSERT INTO Reservations (touristID, houseID, arriveDate, stayLength) 
+VALUES (3, 3, '2019-12-12', 2);
+INSERT INTO Reservations (touristID, houseID, arriveDate, stayLength) 
+VALUES (3, 4, '2019-12-10', 10);

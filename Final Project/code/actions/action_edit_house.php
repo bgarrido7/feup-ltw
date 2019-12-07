@@ -12,6 +12,15 @@ include_once('../database/houses.php');
 
     echo $houseID;
 
+    if($name!=null){
+      if(updateUserInfo(getID($email), $name)){
+          setCurrentUser(getID($email),$email);
+          echo "profile updated with sucess";
+     
+      }
+      else
+          echo "error updating profile";
+  }
 //editHouse($newTitle,$newDescription, $houseID)
 
   ?>

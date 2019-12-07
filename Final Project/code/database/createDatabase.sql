@@ -97,9 +97,9 @@ DROP TABLE IF EXISTS Reservations;
 CREATE TABLE Reservations(
 	touristID INTEGER NOT NULL REFERENCES Users(userID),
 	houseID INTEGER NOT NULL REFERENCES Houses(houseID),
-	arriveDate NUMERIC NOT NULL, --maybe change?
+	arriveDate DATE NOT NULL, --maybe change?
 	stayLength INTEGER NOT NULL,
 	guests INTEGER,
-	PRIMARY KEY (touristID,houseID)
+	PRIMARY KEY (houseID, arriveDate)
 )
 

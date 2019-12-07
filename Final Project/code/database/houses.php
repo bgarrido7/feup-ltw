@@ -77,28 +77,34 @@ function getHouse($houseID) {
     }
 }
 //======================================================
+
+function getHouseAttributes($houseID) {
+    global $dbh;
+        $stmt = $dbh->prepare('SELECT * FROM Houses WHERE houseID = ?');
+        $stmt->execute(array($houseID));
+        return  $stmt->fetch();
+}
+//======================================================
 function getOwnerHouses($userID) {
     global $dbh;
     try {
         $stmt = $dbh->prepare('SELECT houseID FROM Owners WHERE userID = ?');
-    $stmt->execute(array($userID));
+        $stmt->execute(array($userID));
         return $stmt->fetchAll();
-
-
 
     }catch(PDOException $e) {
         return null;
     }
 }
 
-//======================================================testar isto ainda
+//======================================================
 
 function getOwner($houseID) {
     global $dbh;
 
     $stmt = $dbh->prepare('SELECT userID FROM Owners WHERE houseID = ?');
     $stmt->execute(array($houseID));
-    return $stmt->fetchAll();
+    return $stmt->fetch();
 }
 //============================for future implementation==========================
 
