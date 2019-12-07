@@ -10,7 +10,7 @@ $ownerID=getOwner($houseID)['userID'];
 echo "Owner: ";
 getName($ownerID);
 echo ", ";
-getAge($ownerID);
+echo getAge($ownerID);
 echo nl2br("\n");
 
 getHouse($houseID);
