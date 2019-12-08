@@ -88,9 +88,9 @@ function getHouse($houseID) {
 
 function getHouseAttributes($houseID) {
     global $dbh;
-        $stmt = $dbh->prepare('SELECT * FROM Houses WHERE houseID = ?');
-        $stmt->execute(array($houseID));
-        return  $stmt->fetch();
+    $stmt = $dbh->prepare('SELECT * FROM Houses WHERE houseID = ?');
+    $stmt->execute(array($houseID));
+    return  $stmt->fetch();
 }
 //======================================================
 function getOwnerHouses($userID) {
@@ -114,17 +114,26 @@ function getOwner($houseID) {
     $stmt->execute(array($houseID));
     return $stmt->fetch();
 }
-//============================for future implementation==========================
+//======================================================
 
-function editHouse($newTitle,$newDescription, $houseID){
+function editHouse($newTitle,$newDescription, $houseID, $price, $location , $pool, $cable, $wifi, $ac, $kitchen){
     global $dbh;
-        $stmt = $dbh->prepare('UPDATE Houses SET name = ?, description = ? WHERE houseID = ?');
-        $result=$stmt->execute(array($newTitle, $newDescription, $houseID));
 
-        if($refult!=-1)
-        return true;
-        else
-        return false;
+    $stmt = $dbh->prepare('UPDATE Houses SET name = :name ,description=:desc, dailyPrice=:price,location=:local, pool = :pool ,cableTV=:cable, Wifi=:wifi,AC=:ac , kitchen=:kitchen   WHERE houseID = :id');
+    $stmt->bindParam(':name', $newTitle);
+    $stmt->bindParam(':desc', $newDescription);
+    $stmt->bindParam(':id', $houseID);
+    $stmt->bindParam(':price', $price);
+    $stmt->bindParam(':local', $location);
+    
+    $stmt->bindParam(':pool', $pool);
+    $stmt->bindParam(':cable', $cable);
+    $stmt->bindParam(':wifi', $wifi);
+    $stmt->bindParam(':ac', $ac);
+    $stmt->bindParam(':kitchen', $kitchen);
+
+    $result=$stmt->execute();
 
 }
+
 ?>

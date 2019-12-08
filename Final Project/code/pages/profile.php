@@ -4,19 +4,19 @@ include_once('../template/common/header.php');
 include_once('../database/user.php');
 include_once('../template/common/header.php');
 
-getName($_SESSION['email']);
 ?>
-
 <h1>Change Personal Information</h1>
 <div class="content">
     <form action="../actions/action_edit_profile.php" method="post" class="register_form">
+    <input name="email" type="hidden" value="<?php $_SESSION['email'] ?>">
+
         <label>Username</label>
-        <input name="name" class="w3-input w3-border" type="text" placeholder="<?php htmlentities($_SESSION['email']) ?>"></br> </br>
-     <!--   <label>Email</label>
-       <input name="email" class="w3-input w3-border" type="email" placeholder="Email" value="<?php //htmlentities($_SESSION['email']) ?>></br></br>
-     -->   <label>Password</label>
+        <input name="name" class="w3-input w3-border" type="text" placeholder="<?php echo getName(getID($_SESSION['email'])['userID']); ?>" ></br> </br>
+        <label>Birthday</label>
+       <input name="bday" class="w3-input w3-border" type="date" value="<?php echo getBirthday($_SESSION['email'])['birthday']; ?>"></br></br>
+       <label>Password</label>
         <input name="pword" class="w3-input w3-border" type="password" placeholder="New Password">
-        <input name="repeatPword" class="w3-input w3-border" type="password" placeholder="Repeat New Password">
+        <input name="repeatPword" class="w3-input w3-border" type="password" placeholder="Repeat New Password"></br></br>
         <input type="submit" name="Submit" value="Update">
     </form>  
 </div>

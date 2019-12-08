@@ -64,6 +64,14 @@ function getID($email) {
     $stmt->execute(array($email));
     return $stmt->fetch();
  }
+ //======================================================
+
+ function getBirthday($email) {
+  global $dbh;
+  $stmt = $dbh->prepare('SELECT birthday FROM Users WHERE email = ?');
+  $stmt->execute(array($email));
+  return  $stmt->fetch();
+ }
 //======================================================
 
  function getAge($id) {
@@ -72,6 +80,20 @@ function getID($email) {
   $stmt->execute(array($id));
   $result= $stmt->fetch();
   return (2019 - date('Y',strtotime($result['birthday'])));
+ }
+//======================================================
+
+ function updateBday($id, $bday){
+  global $dbh;
+  $stmt = $dbh->prepare('UPDATE Users SET birthday = :bday WHERE userID = :ID');
+  $stmt->bindParam(':bday', $bday);
+  $stmt->bindParam(':ID', $id);
+
+  $result=$stmt->execute();
+  if($result)
+      return true;
+  else
+    return false;
  }
 //======================================================
 function updateUserInfo($userID, $name){

@@ -8,11 +8,11 @@ VALUES ("John Snow", '1f9a5485ccfb043c2e20ba65af986c4ba82013b4681756a873c3c2825a
 
 
 INSERT INTO Users(name, password, birthday, email) 
-VALUES ("Jamie Lanister", '557ae9fcd08f6cbf53d5f4507882609a3ef49016f67e77063da4ad9233c5e2f4', '1964-11-5', "jamie_lanister@gmail.com");
+VALUES ("Jamie Lanister", '557ae9fcd08f6cbf53d5f4507882609a3ef49016f67e77063da4ad9233c5e2f4', '1964-11-05', "jamie_lanister@gmail.com");
 
 
 INSERT INTO Users(name, password, birthday, email) 
-VALUES ("Cercei Lanister", 'a9c3c1f7674502331a5ad3e54592d3eb2fc39cf78bb908004777ff4ac89119e4', '1964-11-5', "lanister_c@gmail.com");
+VALUES ("Cercei Lanister", 'a9c3c1f7674502331a5ad3e54592d3eb2fc39cf78bb908004777ff4ac89119e4', '1964-11-05', "lanister_c@gmail.com");
 
 INSERT INTO Houses(name, location, dailyPrice, description, pool,cableTV, Wifi, AC, kitchen)   
 VALUES("country house in the suburbs","USA","100","perfect for families and old people",1,1,1,0,1) ;

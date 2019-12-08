@@ -13,9 +13,10 @@ echo nl2br("my houses \n");
     //imprimir as casas deste owner
     $userID=getID($_SESSION['email'])['userID'];
     $housearray=getOwnerHouses($userID);
-
     foreach($housearray as $index){
-            getHouse($index['houseID']);
+            
+        getHouse($index['houseID']);
+
         ?>
       
         <form action="house.php" method="post" >

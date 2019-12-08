@@ -25,6 +25,12 @@ foreach(getAllHouses() as $house){
     echo $house['AC'];
     echo nl2br ("\nkitchen: ");
     echo $house['kitchen'];
+    ?>
+    <form action="house.php" method="post" >
+    <input type="hidden" name="id" value="<?php echo $house['houseID']; ?>"/>
+    <input type="submit" value="see this house's page" />
+    </form>
+<?php
 }
 
 

@@ -19,7 +19,7 @@
       <a href="list_cart.php"><i class="fa fa-search"></i> search</a>
         <a href="list_cart.php"><i class="fas fa-torii-gate"></i> </br>
      --> </div>
-
+  
       <div id="user">
         <form action="actions/action_login.php" method="post">
           <input type="text" placeholder="email" name="email"  required="required">
