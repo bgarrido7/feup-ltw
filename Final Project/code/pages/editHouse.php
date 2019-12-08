@@ -25,7 +25,6 @@ $houseID=$_POST['houseID'];
     
   <ul>Aditional things
   <ul>  Pool: <input type="checkbox"  name="pool"></ul>
-
   <ul>  Cable TV: <input type="checkbox"  name="cable" ></ul>
   <ul>  Wifi: <input type="checkbox"  name="wifi" ></ul>
   <ul>  AC: <input type="checkbox"  name="ac"></ul>

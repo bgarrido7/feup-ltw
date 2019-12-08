@@ -5,7 +5,6 @@ include_once('../database/rents.php');
 include_once('../database/user.php');
 include_once('../database/houses.php');
 
-
 echo nl2br ("my rented houses:\n");
 $oldRow=0;
 $oldRent=0;
