@@ -11,9 +11,9 @@ $houseID=$_POST['houseID'];
    <input type="hidden" name="houseID" value="<?php echo $houseID; ?>"/>
     Name: <input type="text" name="name"  placeholder="<?php echo getHouseAttributes($houseID)['name']; ?>"><br />
     <label> Location:
-        <select name="city" placeholder="<?php echo getHouseAttributes($houseID)['location']; ?>">
+        <select name="city">
             <option value="usa">USA</option>
-            <option value="sw">Switzerland</option>
+            <option value="sw" selected>Switzerland</option>
             <option value="pt">Portugal</option>
             <option value="poland">Poland</option>
             <option value="croatia">Croatia</option>
@@ -24,7 +24,7 @@ $houseID=$_POST['houseID'];
     Description: <textarea name="desc" rows="4" cols="50" placeholder="<?php echo getHouseAttributes($houseID)['description']; ?>"></textarea>
     
   <ul>Aditional things
-  <ul>  Pool: <input type="checkbox"  name="pool" checked></ul>
+  <ul>  Pool: <input type="checkbox"  name="pool"></ul>
 
   <ul>  Cable TV: <input type="checkbox"  name="cable" ></ul>
   <ul>  Wifi: <input type="checkbox"  name="wifi" ></ul>
