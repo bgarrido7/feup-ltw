@@ -20,6 +20,6 @@ All the course's information can be viewed [here](https://web.fe.up.pt/~arestivo
 
 *Frameworks are not allowed*
 
-**booklog:**
+**Brandbook:**
 
-<img src="https://github.com/bgarrido7/FEUP_LTW/blob/master/Final%20Project/mockups/brandbook.png">
+<img src="">
