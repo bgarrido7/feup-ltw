@@ -5,9 +5,9 @@
     text-decoration: none;
     font-size: xx-large;
 }
-#user a:link{
+#user a:link, a:visited{
     text-decoration: underline;
-}
+    color: #FB0023;}
 #info a:visited{
     color: black;
     display:block;
@@ -43,8 +43,16 @@
     padding-bottom: 50%;
     
 }
+#menu-bar h1{
+    font-size: x-large;
+}
 body{
     margin: 0;
+    background-color: #f6f7f9;
+}
+body input[type=submit]{
+    background-color:  #203354;
+    color: white;
 }
 
 #menu-bar img{
