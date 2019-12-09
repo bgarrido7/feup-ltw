@@ -40,9 +40,5 @@ include_once("../template/content/house.php");
         include_once("../template/dialogs/rent_house.php");
 
     }
-    else{
-        include_once("../template/dialogs/edit_button.php");
-
-    }
 include_once('../template/common/footer.php');
 ?>

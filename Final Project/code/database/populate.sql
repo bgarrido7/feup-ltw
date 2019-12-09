@@ -43,3 +43,5 @@ INSERT INTO Reservations (touristID, houseID, arriveDate, stayLength)
 VALUES (3, 3, '2019-12-12', 2);
 INSERT INTO Reservations (touristID, houseID, arriveDate, stayLength) 
 VALUES (3, 4, '2019-12-10', 10);
+INSERT INTO Reservations (touristID, houseID, arriveDate, stayLength) 
+VALUES (4, 2, '2020-02-02', 4);
