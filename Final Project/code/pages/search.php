@@ -2,7 +2,7 @@
 include_once('../template/common/header.php');
 include_once('../includes/init.php');
 
-echo nl2br("search\n\n");
+include_once("../template/common/aside.php");
 include_once('../database/houses.php');
 
 foreach(getAllHouses() as $house){

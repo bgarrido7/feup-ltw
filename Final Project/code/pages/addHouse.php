@@ -1,5 +1,7 @@
 <?php
 include_once('../template/common/header.php');
+include_once("../template/common/aside.php");
+
 ?>
 <section id="adition">
    <form action="../actions/action_addHouse.php" method="post" enctype="multipart/form-data">

@@ -129,18 +129,6 @@ function updatePassword($userID ,$pword){
 //======================================================
 
 //-------------------for future implementation---------------------------
-function updateUserPhoto($userID, $photoPath) {
-  global $dbh;
-  try {
-    $stmt = $dbh->prepare('UPDATE User SET Photo = ? WHERE ID = ?');
-    if($stmt->execute(array($photoPath, $userID)))
-        return true;
-    else
-        return false;
-  }catch(PDOException $e) {
-    return false;
-  }
-} 
 
 function getUserPhoto($userID) {
   global $dbh;
@@ -153,11 +141,11 @@ function getUserPhoto($userID) {
     return null;
   }
 }
-
+//======================================================
 function setUserPhoto($userID, $photoPath) {
   global $dbh;
   try {
-    $stmt = $dbh->prepare('INSERT INTO UserPicture(userID,picture) VALUE(:id, :photo)');
+    $stmt = $dbh->prepare('INSERT INTO UserPicture(userID,pictureID) VALUE(:id, :photo)');
     $stmt->bindParam(':id', $userID);
     $stmt->bindParam(':photo', $photoPath);
 
@@ -165,6 +153,7 @@ function setUserPhoto($userID, $photoPath) {
   
   }catch(PDOException $e) {
     return null;
-  }}
+  }
+}
 //---------------------------------------------------------------------------
 ?>

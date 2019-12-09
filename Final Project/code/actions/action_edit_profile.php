@@ -18,27 +18,33 @@ if($name!=null){
         echo "error updating profile";
 }
 
-if(updateBday(getID($email)['userID'], $bday))
-echo "bday updated";
+if(getBirthday($email)['birthday'] != $bday){
+        
+    if(updateBday(getID($email)['userID'], $bday))
+        echo "bday updated";
 
-else
-echo "bday not updated";
-
+    else
+        echo "error updating bday";
+}
 if($pword!=null){
-    if(strcmp($pword, $repeatPword))
+    if(strcmp($pword, $repeatPword)){
         echo "passwords don't match";
-
+        ?><a href=../pages/profile.php><?php
+    }
     else{
-        if (updatePassword(getID($email), $pword))
+        $result=updatePassword(getID($email)['userID'], $pword);
+        echo $result;
+        if ($result)
             echo "password updated";
         else    
             echo "error updating password";
+
     }
     
-}
+}    header('Location:  ../pages/homepage.php');
+
     /*-----------------------------------------------------------------------------------
     header("Location:".$_SERVER['HTTP_REFERER']."");
     ---------------------------------------------------------------------------------*/
-    header('Location:  ../pages/homepage.php');
 
 ?>    

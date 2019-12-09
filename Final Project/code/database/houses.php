@@ -135,5 +135,18 @@ function editHouse($newTitle,$newDescription, $houseID, $price, $location , $poo
     $result=$stmt->execute();
 
 }
-
+//======================================================
+function setHousePhoto($houseID, $photoPath) {
+    global $dbh;
+    try {
+      $stmt = $dbh->prepare('INSERT INTO HousePicture(houseID,pictureID) VALUE(:id, :photo)');
+      $stmt->bindParam(':id', $houseID);
+      $stmt->bindParam(':photo', $photoPath);
+  
+      return $stmt->execute();
+    
+    }catch(PDOException $e) {
+      return null;
+    }
+  }
 ?>

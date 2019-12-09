@@ -4,6 +4,7 @@ include_once('../includes/init.php');
 include_once('../database/houses.php');
 include_once('../database/user.php');
 include_once('../database/rents.php');
+include_once("../template/common/aside.php");
 
 $houseID = $_POST['id'];
 $ownerID=getOwner($houseID)['userID'];

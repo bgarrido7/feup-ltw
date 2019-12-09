@@ -1,7 +1,8 @@
 <?php
-  include_once('includes/init.php');
+  include_once('../includes/init.php');
+
   session_destroy();
-  
+  $_SESSION = array();
+
   header ("Location: ../index.php");
- // header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>
