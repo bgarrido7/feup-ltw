@@ -18,10 +18,16 @@
 - [x] User scan be simultaneously owner & tourist
 - [x] Login and logout.
 - [x] Edit user's profile.
-- [ ] Owner manage places (title, price per day, location, description)
-- [ ] Owner see list of reservations
+- [x] Owner manage places (title, price per day, location, description)
+- [x] Owner see list of reservations
 - [ ] Tourists search using several criteria (price, location, dates, available, ...)
-- [ ] Tourists rent place
+- [x] Owners can see which places have guest arriving 
+- [x] Owners and tourists can cancel a reservation
+- [x] Tourists rent place
+
+**Brandbook:**
+
+<img src="https://github.com/bgarrido7/feup-ltw/blob/master/Final%20Project/design/brandbook.png">
 
 ## Screenshots
 
