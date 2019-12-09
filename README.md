@@ -22,4 +22,4 @@ All the course's information can be viewed [here](https://web.fe.up.pt/~arestivo
 
 **Brandbook:**
 
-<img src="">
+<img src="https://github.com/bgarrido7/feup-ltw/blob/master/Final%20Project/design/brandbook.png">
