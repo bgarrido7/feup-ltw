@@ -6,7 +6,7 @@ include_once('../database/user.php');
 
   <h1>Welcome 
 <?php
-getName(getID($_SESSION['email'])['userID']);
+echo getName(getID($_SESSION['email'])['userID']);
 ?>
 !</h1>
 

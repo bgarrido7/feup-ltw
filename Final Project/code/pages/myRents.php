@@ -6,55 +6,38 @@ include_once('../database/user.php');
 include_once('../database/houses.php');
 include_once("../template/common/aside.php");
 
-echo nl2br ("my rented houses:\n");
+include_once("../template/titles/rents.php");
+
 $oldRow=0;
 $oldRent=0;
 $owner=getID($_SESSION['email'])['userID'];
 
-  foreach(getOwnerHouses($owner) as $row){
+foreach(getOwnerHouses($owner) as $row){
 
-        if($row['houseID']==$oldRow)
-            continue;
+    if($row['houseID']==$oldRow)
+        continue;
 
-        foreach(getHouseID() as $rents){
-            if($rents['houseID']==$row['houseID']){
+    foreach(getHouseID() as $rents){
 
-                if($rents['houseID']==$oldRent)
-                    continue;
+        if($rents['houseID']==$row['houseID']){
 
-                echo nl2br("-----------------------------------------------------------------------------------------\nNAME: ");
-                echo getHouseAttributes($rents['houseID'])['name']; //dá bem
-                
-                
-                
-                foreach(  getHouseTourists($rents['houseID']) as $guest){
-                        echo nl2br("\n\nhospede: ");
-                        getName($guest['touristID']);
-                        echo nl2br("\narrival date: ");
-                        echo $guest['arriveDate']; 
-                        echo nl2br("\nstay lenght: ");
-                        echo $guest['stayLength']; 
+            if($rents['houseID']==$oldRent)
+                continue;
+
+            $houseName= getHouseAttributes($rents['houseID'])['name']; 
             
-
-                        ?>
-                        <form action='../actions/action_deleteReserv.php' method="post">
-                        <input type="hidden" name="owner" value="<?php echo "1"?>">
-                        <input type="hidden" name="touristID" value="<?php echo $guest['touristID']; ?>">
-                        <input type="hidden" name="arrival" value="<?php echo $guest['arriveDate'];  ?>">
-                        <input type="submit" name="submit" value="Delete Reservation">
-                        </form>
-                    <?php
-                }
-                $oldRent=$rents['houseID'];
+            foreach(  getHouseTourists($rents['houseID']) as $guest){
+                $guestName= getName($guest['touristID']);
+                $arriveDate=$guest['arriveDate']; 
+                $stayLenght= $guest['stayLength']; 
+    
+                include("../template/content/list_rents.php");
             }
+            $oldRent=$rents['houseID'];
         }
-        $oldRow=$row['houseID'];
     }
- 
-?>
-</br>
-<a href="homepage.php">homepage</a>
-<?php
+    $oldRow=$row['houseID'];
+}
 
 include_once("../template/common/footer.php");
 

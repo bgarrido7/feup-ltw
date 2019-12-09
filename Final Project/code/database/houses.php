@@ -51,7 +51,7 @@ function getAllHouses() {
     $stmt->execute();
     return $stmt->fetchAll();
 }
-//======================================================
+//============== apagar isto depois, nao usado ==============
 
 function getHouse($houseID) {
     global $dbh;

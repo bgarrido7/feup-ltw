@@ -9,15 +9,22 @@ include_once("../template/common/aside.php");
 $houseID = $_POST['id'];
 $ownerID=getOwner($houseID)['userID'];
 
-echo "Owner: ";
-getName($ownerID);
-echo ", ";
-echo getAge($ownerID);
-echo nl2br("\n");
+$owner= getName($ownerID);
+$age= getAge($ownerID);
 
-getHouse($houseID);
+$houseName= getHouseAttributes($houseID)['name'];
+$local=getHouseAttributes($houseID)['location'];
+$price= getHouseAttributes($houseID)['dailyPrice'];
+$desc= getHouseAttributes($houseID)['description'];
+$pool= getHouseAttributes($houseID)['pool'];
+$cable= getHouseAttributes($houseID)['cableTV'];
+$wifi=getHouseAttributes($houseID)['Wifi'];
+$ac= getHouseAttributes($houseID)['AC'];
+$kitchen= getHouseAttributes($houseID)['kitchen'];
 
 $guestID = getID($_SESSION['email'])['userID'];
+
+include_once("../template/content/house.php");
 
     if(strcmp($guestID, $ownerID) !== 0){
 
@@ -25,32 +32,17 @@ $guestID = getID($_SESSION['email'])['userID'];
         echo nl2br("\n\ndates already rented for this house: \n");
 
         foreach($dates as $index){
-            echo nl2br("\nfrom ");
-            print_r($index['arriveDate']); 
-            echo nl2br(" to ");
-            print_r(  date( "Y-m-d" , (strtotime($index['arriveDate']))  +  ($index['stayLength']) *(24*60*60) ) );
-        }
+            $arrival=($index['arriveDate']); 
+            $departure=(  date( "Y-m-d" , (strtotime($index['arriveDate']))  +  ($index['stayLength']) *(24*60*60) ) );
+            include("../template/dialogs/rent_dates.php");
 
-        ?>
-        <h1>Rent for a period of time</h1>
-        <form action="../actions/action_rent.php" method="post" >
-        <input type="hidden" name="houseID" value="<?php echo $houseID; ?>"/>
-        <input type="hidden" name="touristID" value="<?php echo $guestID; ?>"/>
-            Dates:</br>
-             <input type="date" value="2019-12-17" name="init" min="2019-12-17"><br/>
-            <input type="date" value="2019-12-18" name="end"  min="2019-12-18"><br/>
-        <input type="submit" value="Rent"/>
-</br>
-        <?php
+        }
+        include_once("../template/dialogs/rent_house.php");
+
     }
     else{
-        ?>
-        <form action="editHouse.php" method="post" >
-        <input type="hidden" name="houseID" value="<?php echo $houseID; ?>"/>
-            <input type="submit" value="edit this house" />
-            </form>
-        <?php
-    }
+        include_once("../template/dialogs/edit_button.php");
 
+    }
 include_once('../template/common/footer.php');
 ?>

@@ -5,25 +5,19 @@ include_once('../database/rents.php');
 include_once('../database/user.php');
 include_once('../database/houses.php');
 include_once("../template/common/aside.php");
-include_once("../template/content/myReserv.php");
+include_once("../template/titles/reservations.php");
 
 $touristID=getID($_SESSION['email'])['userID'];
-    foreach(getTouristStays($touristID) as $row){
-      
-       // echo nl2br("\n\n");
-        $houseName=getHouseAttributes($row['houseID'])['name'];
-       // echo nl2br("\narrival date: ");
-        $arriveDate=$row['arriveDate'];
-       // echo nl2br("\nstay length: ");
-        $stayLenght=$row['stayLength'];
-      //  echo(" days");
-        ?>
-    
-    <?php
 
-include("../template/content/listReserv.php");
+foreach(getTouristStays($touristID) as $row){
+  
+    $houseName=getHouseAttributes($row['houseID'])['name'];
+    $arriveDate=$row['arriveDate'];
+    $stayLenght=$row['stayLength'];
 
-   }
+    include("../template/content/list_reserv.php");
+}
+
 include_once("../template/common/footer.php");
 
 

@@ -55,7 +55,7 @@ function getName($id) {
   $stmt = $dbh->prepare('SELECT * FROM Users WHERE userID = ? ');
     $stmt->execute(array($id));
     $user=$stmt->fetch();
-   echo $user['name'];
+   return $user['name'];
 }
 //======================================================
 function getID($email) {

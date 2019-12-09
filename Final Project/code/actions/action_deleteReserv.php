@@ -8,13 +8,11 @@ $arrival=$_POST['arrival'];
 
 deteleRent($touristID, $arrival);
 
-if(!empty($_POST['owner'])){
-
+if($_POST['owner']){
  header('Location:  ../pages/myRents.php');
 
 }else{
-
-  header('Location:  ../pages/myReservations.php');
+header('Location:  ../pages/myReservations.php');
 
 }
 ?>
