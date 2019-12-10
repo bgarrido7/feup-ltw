@@ -32,13 +32,13 @@ $kitchen=1;
 $houseID = addHouse(getID($_SESSION['email'])['userID'], $name,$location,$price,$desc,$pool,$cable, $wifi, $ac, $kitchen);
 
  if($houseID!=-1){
-        echo "sucess";
-        getHouse($houseID);
+   unset($_SESSION['error']);
+   getHouse($houseID);
     }
  
  else{
-    echo "fail";
-    echo $result; 
+   $_SESSION['error']="add house error";
+   echo $result; 
  }
 
  header("Location: ../pages/myHouses.php");

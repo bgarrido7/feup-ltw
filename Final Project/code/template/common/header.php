@@ -14,7 +14,7 @@
 <div id="menu-bar">
   <header>
     <nav>
-    <a href="/~up201504710/ltw/code/index.php"><img src="/~up201504710/ltw/code/images/site/logo.png" alt="logo" width="50px"></a>
+    <a href="/~up201504710/ltw/code/pages/homepage.php"><img src="/~up201504710/ltw/code/images/site/logo.png" alt="logo" width="50px"></a>
         <a href="/~up201504710/ltw/code/pages/homepage.php">Jūkyo</a>
 </nav>
 </header>

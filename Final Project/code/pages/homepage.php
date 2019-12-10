@@ -10,6 +10,7 @@ echo getName(getID($_SESSION['email'])['userID']);
 ?>
 !</h1>
 
+           
 <?php
 include_once("../template/common/aside.php");
 include_once("../template/common/footer.php");

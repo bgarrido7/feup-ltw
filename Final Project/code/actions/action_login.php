@@ -5,18 +5,17 @@ include_once('../template/common/header.php');
 
 $result=isLoginCorrect($_POST['email'], $_POST['pword']);
 if ($result == -1) {
-    echo "\nuser doesn't exist\n";
-    ?>
-    <a href="../index.php">homepage</a>
-    <?php
+  $_SESSION['error']="user doesn't exist";
+  header('Location:  ../pages/login.php');
+
   }
 elseif($result== 0){
-  echo "\npassword incorrect";
-  ?>
-  <a href="../index.php">homepage</a>
-  <?php
+  $_SESSION['error']="password incorrect";
+  header('Location:  ../pages/login.php');
+
 }
   else{ 
+    unset($_SESSION['error']);
 //    header('Location:  ../pages/homepage.php' /*. $_SERVER['HTTP_REFERER']*/);
     setCurrentUser( getID($email), $_POST['email']);
     header('Location:  ../pages/homepage.php');

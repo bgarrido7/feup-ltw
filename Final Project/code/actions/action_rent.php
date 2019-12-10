@@ -2,7 +2,11 @@
 include_once('../includes/init.php');
 include_once('../database/rents.php');
 
-  $houseID=$_POST['houseID'];
+if(isset($_POST['houseID']))
+$houseID=$_POST['houseID'];
+else 
+$houseID=$_SESSION['houseID'];
+
   $init=$_POST['init'];
   $end=$_POST['end'];
   $touristID=$_POST['touristID'];
@@ -13,7 +17,7 @@ include_once('../database/rents.php');
 
   //só conta em dias
   $stayLength = ($datetime2 - $datetime1) /(24*60*60); //para tirar as horas e minutos 
-   
+  
   foreach(getHouseTourists($houseID) as $dates){
 
     $bookedBegin=strtotime($dates['arriveDate']);
@@ -26,30 +30,22 @@ include_once('../database/rents.php');
   }
   
   if(strcmp($init,$end)>=0){
-      echo "departure date must be after arrival date";
-      ?>
-        <form action="../pages/house.php" method="post" >
-          <input type="hidden" name="id" value="<?php echo $houseID; ?>"/>
-              <input type="submit" value="try again" />
-              </form>
-      <?php
+    $_SESSION['error']="departure date must be after arrival date";
+    $_SESSION['houseID']=$houseID;
+
   }
 else if($booked){
-    echo "dates already booked";
+  $_SESSION['error']="dates already booked";
+  $_SESSION['houseID']=$houseID;
 
 
-    ?>
-    <form action="../pages/house.php" method="post" >
-      <input type="hidden" name="id" value="<?php echo $houseID; ?>"/>
-          <input type="submit" value="try again" />
-          </form>
-  <?php
   }
   else {
-    
+    unset( $_SESSION['error']);
     addDates($touristID, $houseID, $init, $stayLength) ;
-    header('Location:  ../pages/homepage.php');
+
 
   }
+  header('Location:  ../pages/house.php');
 
 ?>

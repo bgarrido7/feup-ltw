@@ -51,39 +51,7 @@ function getAllHouses() {
     $stmt->execute();
     return $stmt->fetchAll();
 }
-//============== apagar isto depois, nao usado ==============
 
-function getHouse($houseID) {
-    global $dbh;
-    try {
-        $stmt = $dbh->prepare('SELECT * FROM Houses WHERE houseID = ?');
-        $stmt->execute(array($houseID));
-        while($row=$stmt->fetch()){
-        echo nl2br ("\nname: ");
-        echo $row['name'];
-        echo nl2br ("\nlocation: ");
-        echo $row['location'];
-        echo nl2br ("\nprice per day: ");
-        echo $row['dailyPrice'];
-        echo nl2br ("\ndescription: ");
-        echo $row['description'];
-        echo nl2br ("\npool: ");
-        echo $row['pool'];
-        echo nl2br ("\ncableTV: ");
-        echo $row['cableTV'];
-        echo nl2br ("\nWifi: ");
-        echo $row['Wifi'];
-        echo nl2br ("\nAC: ");
-        echo $row['AC'];
-        echo nl2br ("\nkitchen: ");
-        echo $row['kitchen'];
-        echo nl2br ("\n");
-    }
-    return 0;
-    }catch(PDOException $e) {
-        return null;
-    }
-}
 //======================================================
 
 function getHouseAttributes($houseID) {
@@ -139,7 +107,7 @@ function editHouse($newTitle,$newDescription, $houseID, $price, $location , $poo
 function setHousePhoto($houseID, $photoPath) {
     global $dbh;
     try {
-      $stmt = $dbh->prepare('INSERT INTO HousePicture(houseID,pictureID) VALUE(:id, :photo)');
+      $stmt = $dbh->prepare('INSERT INTO HousePicture(houseID,HousePicID) VALUE(:id, :photo)');
       $stmt->bindParam(':id', $houseID);
       $stmt->bindParam(':photo', $photoPath);
   

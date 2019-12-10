@@ -1,36 +1,29 @@
 <?php
 include_once('../includes/init.php');
+include_once('../includes/session.php');
 include_once('../database/user.php');
 
 $userID = createUser($_POST['name'], $_POST['email'], $_POST['pword'],$_POST['repeatPword'], $_POST['bday']);
 if($userID == -1){
+    $_SESSION['error']="login error";
     echo "error";
 }
 else if($userID == -4){
-    echo "passwords do not match";
-   
-}
-else if($userID == -2){
-    echo "invalid email";
-    
+    $_SESSION['error']="passwords do not match";
+    header("Location: ../pages/register.php");
+
 }
 else if($userID == -3){    
-    //$_SESSION['ERROR'] = 'Duplicated Email';
-    //   header("Location:".$_SERVER['HTTP_REFERER']."");
-    echo "email already register"; 
-    
+    $_SESSION['error']="email already register";
+    header("Location: ../pages/register.php");
 }
-else{
+else{  
+     unset($_SESSION['error']);
     setCurrentUser( getID($_POST['email']), $_POST['email']);
    header("Location: ../pages/homepage.php");
-//header("Location: ../pages/error.php");
-//setCurrentUser($userID, $_POST['name']);
+
 
 }
-setUserPhoto($userID, );
-
-?>
-    <a href="../register.php">try again</a>
-    <?php
+//setUserPhoto($userID , );
 
 ?>

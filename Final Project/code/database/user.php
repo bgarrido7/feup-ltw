@@ -7,9 +7,6 @@ function createUser($name, $email, $pword, $repeatPword, $bday) {
     $stmt->execute(array($email));
     $user=$stmt->fetch();
 
-    if(strpos ($email,'@gmail.com')===false) //email not valid
-      return -2;
-
     if($user!==false) //user already exists
       return -3;
     if(strcmp($pword,$repeatPword)) //passwords don't match
@@ -145,7 +142,7 @@ function getUserPhoto($userID) {
 function setUserPhoto($userID, $photoPath) {
   global $dbh;
   try {
-    $stmt = $dbh->prepare('INSERT INTO UserPicture(userID,pictureID) VALUE(:id, :photo)');
+    $stmt = $dbh->prepare('INSERT INTO UserPicture(userID,UserPicID) VALUE(:id, :photo)');
     $stmt->bindParam(':id', $userID);
     $stmt->bindParam(':photo', $photoPath);
 
