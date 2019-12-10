@@ -11,37 +11,48 @@
 if($name!=null){
     if(updateUserInfo(getID($email)['userID'], $name)){
         setCurrentUser(getID($email)['userID'],$email);
-        echo "profile updated with sucess";
+        unset($_SESSION['error']); 
    
     }
-    else
-        echo "error updating profile";
+    else{
+        $_SESSION['error']="error updating profile";
+        header('Location:  ../pages/profile.php');
+
+    }
 }
 
 if(getBirthday($email)['birthday'] != $bday){
         
-    if(updateBday(getID($email)['userID'], $bday))
-        echo "bday updated";
+    if(updateBday(getID($email)['userID'], $bday)){
+        unset($_SESSION['error']); 
 
-    else
-        echo "error updating bday";
+    }
+
+    else{
+        $_SESSION['error']="error updating birthday";
+        header('Location:  ../pages/profile.php');
+
+    }
+       
 }
 if($pword!=null){
     if(strcmp($pword, $repeatPword)){
-        echo "passwords don't match";
-        ?><a href=../pages/profile.php><?php
+        $_SESSION['error']="passwords don't match";
+        header('Location:  ../pages/profile.php');    
     }
     else{
         $result=updatePassword(getID($email)['userID'], $pword);
-        echo $result;
         if ($result)
-            echo "password updated";
-        else    
-            echo "error updating password";
+            unset($_SESSION['error']); 
+       else{          
+         $_SESSION['error']="error updating password";
+         header('Location:  ../pages/profile.php');
+    }  
+}
 
     }
-    
-}    header('Location:  ../pages/homepage.php');
+header('Location:  ../pages/homepage.php');
+   
 
     /*-----------------------------------------------------------------------------------
     header("Location:".$_SERVER['HTTP_REFERER']."");

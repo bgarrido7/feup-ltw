@@ -9,8 +9,11 @@
     Birthday: <input type="date" value="2019-12-17" name="bday"><br/>
     Profile Picture:<input type="file" name="profilePic"> <br/>    
    <input type="submit" value="Register" />
+
+   <div id="error">
   <?php if(isset($_SESSION['error']))
             echo $_SESSION['error'];
             ?>
+            </div>
  </form>
  </section>

@@ -13,6 +13,8 @@
         <input type="submit" name="Submit" value="Update">
     </form>  
 </div>
+
+
 <!--
 <div id="photo_field">
     <form action="../actions/api_upload_photo.php" method="post" enctype="multipart/form-data">
@@ -23,3 +25,7 @@
     </form>
 </div>
   -->
+
+  <?php 
+
+  echo $_SESSION['error'] ?>
