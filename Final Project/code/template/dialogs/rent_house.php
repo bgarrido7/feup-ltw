@@ -7,3 +7,7 @@ Dates:</br>
 <input type="date" value="2019-12-18" name="end"  min="2019-12-18"><br/>
 <input type="submit" value="Rent"/>
 </br>
+<div id="error">
+<?php if(isset($_SESSION['error'])) echo htmlentities($_SESSION['error']); unset($_SESSION['error'])?>
+</div>
+

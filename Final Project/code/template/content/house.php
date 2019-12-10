@@ -1,3 +1,4 @@
+<div id="content">
 <h1> <?php echo htmlentities($houseName);  ?></h1>
 <div>
 <h3>Owner: <?php echo htmlentities($owner);  ?>, <?php echo htmlentities($age);  ?> </h3>
@@ -10,4 +11,6 @@
 <p>wifi? <?php echo htmlentities($wifi);  ?></p>
 <p>AC? <?php echo htmlentities($ac);  ?></p>
 <p>kitchen? <?php echo htmlentities($kitchen);  ?></p>
+
+</div>
 

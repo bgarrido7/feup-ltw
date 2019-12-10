@@ -8,6 +8,8 @@
    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" > 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+
   <body>
 
     <header id="intro">
@@ -18,7 +20,8 @@
         <i class="fa fa-hotel"></i>(0)</br>
       <a href="list_cart.php"><i class="fa fa-search"></i> search</a>
         <a href="list_cart.php"><i class="fas fa-torii-gate"></i> </br>
-     --> </div>
+     --> 
+    </div>
   
       <div id="user">
         <form action="../actions/action_login.php" method="post">
@@ -26,13 +29,14 @@
           <input type="password" placeholder="password" name="pword"  required="required">
           
             <input type="submit" value="Login">
-           <div></br></br> <a href="../pages/register.php">Register</a>
-          <div id="error">
-           <?php if(isset($_SESSION['error']))
-                    echo $_SESSION['error'];
-           ?>
-          </div>
-          </div>
+</br>
+            <div id="error">
+            <?php if(isset($_SESSION['error'])) echo htmlentities($_SESSION['error']); unset($_SESSION['error'])?>
+              
+            </div>
+           <div></br></br> <a href="../pages/register.php">Register</a></div>
+          
+           </div>
+ 
         </form>
-      </div>
     </header>

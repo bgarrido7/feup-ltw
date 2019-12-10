@@ -7,9 +7,9 @@ include_once('../database/rents.php');
 include_once("../template/common/aside.php");
 
 if(isset( $_POST['id']))
-$houseID = $_POST['id'];
+    $houseID = $_POST['id'];
 else
-$houseID= $_SESSION['houseID'];
+    $houseID= $_SESSION['houseID'];
 
 $ownerID=getOwner($houseID)['userID'];
 
@@ -42,9 +42,7 @@ include_once("../template/content/house.php");
 
         }
         include_once("../template/dialogs/rent_house.php");
-        if(isset($_SESSION['error']))
-            echo $_SESSION['error'];
-
+   
     }
 include_once('../template/common/footer.php');
 ?>

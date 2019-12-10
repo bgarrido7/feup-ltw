@@ -7,7 +7,9 @@
 }
 #user a:link, a:visited{
     text-decoration: underline;
-    color: #FB0023;}
+    color: #FB0023;
+}
+
 #info a:visited{
     color: black;
     display:block;
@@ -37,7 +39,7 @@
     text-decoration: none;  
     font-size: 200%;  
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
+    
 }
 #menu-bar a:visited{
     padding-bottom: 50%;
@@ -53,6 +55,47 @@ body{
     background-size: 100% 100%;
 }
 
+#error{
+margin-top:3%;
+color:#8B0000;
+
+}
+
+aside a:visited, a:link{
+    color:#203354
+}
+aside {
+    background-color: #dee2ec;
+    overflow-y: hidden;
+    color:black;
+   
+/*    criar uma classe com isto
+    grid-area: aside;
+*/
+height: 87%; 
+width: 15%; 
+/*position: fixed;
+*/z-index: 1; /* Stay on top */
+top: 7%; 
+left: 0;
+  }
+
+
+  #homepage{
+background-color: red;
+height: 87%; 
+width: 85%; 
+/*position: fixed;
+*/z-index: 1; /* Stay on top */
+top: 7%; 
+left: 15%;
+  }
+#content{
+color:black;
+}
+#content a:hover{
+    color:yellow;
+    }
 body input[type=submit]{
     background-color:  #203354;
     color: white;

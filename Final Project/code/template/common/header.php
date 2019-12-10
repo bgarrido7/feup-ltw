@@ -9,8 +9,11 @@
     <link href="https://fonts.googleapis.com/css?family=Cherry+Swash" rel="stylesheet">
    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" > 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   </head>
-<body>
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+<body >
+
 <div id="menu-bar">
   <header>
     <nav>
