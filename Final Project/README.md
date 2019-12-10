@@ -1,3 +1,5 @@
+## Final Project
+
 ### Technologies Used:
 
 * HTML
@@ -5,8 +7,6 @@
 * PHP
 * JavaScript
 * PDO/SQL (using sqlite)
-
-## Final Project
 
 **Objective:** Create a website where owners can list their houses and apartments for tourists to rent
 
