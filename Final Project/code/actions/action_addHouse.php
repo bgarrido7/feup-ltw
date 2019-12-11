@@ -31,20 +31,33 @@ $kitchen=1;
 
 $houseID = addHouse(getID($_SESSION['email'])['userID'], $name,$location,$price,$desc,$pool,$cable, $wifi, $ac, $kitchen);
 
+//----------------------------for house pic--------------------------------- 
+$target_dir = "../images/houses/";
+
+$file = $_FILES['fileToUpload']['name'];
+$path = pathinfo($file);
+$filename = $path['filename'];
+
+$target_file = ( $target_dir.$houseID.".".$path['extension'] ) ;
+
+$source_file = $_FILES["fileToUpload"]["tmp_name"];
+
+if( move_uploaded_file($source_file, $target_file)!==TRUE){
+    $_SESSION['error']="error uploading photo";
+
+}
+//---------------------------------------------------------------------------
+
  if($houseID!=-1){
    unset($_SESSION['error']);
-   getHouse($houseID);
     }
  
  else{
    $_SESSION['error']="add house error";
-   echo $result; 
  }
 
  header("Location: ../pages/myHouses.php");
- //  include_once('includes/init.php');
-//  addHouse($_GET['id']);
-//  header('Location: ' /*. $_SERVER['HTTP_REFERER']*/);
+
 ?>
 
 

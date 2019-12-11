@@ -21,8 +21,8 @@
   <ul>  AC: <input type="checkbox"  name="ac"></ul>
   <ul>  Kitchen: <input type="checkbox"  name="kitchen"></ul>  
     </ul>
-  <!--  Profile Picture:<input type="file" name="profilePic"> <br/>    
-   --> 
+  House picture:<input type="file" name="fileToUpload" id="fileToUpload" >please only submit .jpg files <br/>    
+
    <input type="submit" value="Add" />
 
  </form>

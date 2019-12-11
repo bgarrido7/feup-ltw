@@ -11,6 +11,7 @@ include_once("../template/titles/myHouses.php");
     $userID=getID($_SESSION['email'])['userID'];
     $housearray=getOwnerHouses($userID);
     foreach($housearray as $index){
+        
         $houseID= $index['houseID'];     
 
         $houseName= getHouseAttributes($houseID)['name'];

@@ -20,7 +20,7 @@ function createUser($name, $email, $pword, $repeatPword, $bday) {
     $result = $stmt->execute();
 
     if($result){ 
-      getID($email);
+      return $dbh->lastInsertId();
     }
     else{
       return -1;
@@ -38,7 +38,7 @@ function isLoginCorrect($email, $pword) {
    $result = strcmp($user['password'], $passwordhashed);
    if($user!==false){
       if(!$result)
-        return 1;//getID($email); 
+        return 1;
       else
         return 0;
     }
@@ -124,25 +124,10 @@ function updatePassword($userID ,$pword){
 } 
 
 //======================================================
-
-//-------------------for future implementation---------------------------
-
-function getUserPhoto($userID) {
-  global $dbh;
-  try {
-    $stmt = $dbh->prepare('SELECT Photo FROM User WHERE ID = ?');
-    $stmt->execute(array($userID));
-    return $stmt->fetch();
-  
-  }catch(PDOException $e) {
-    return null;
-  }
-}
-//======================================================
 function setUserPhoto($userID, $photoPath) {
   global $dbh;
   try {
-    $stmt = $dbh->prepare('INSERT INTO UserPicture(userID,UserPicID) VALUE(:id, :photo)');
+    $stmt = $dbh->prepare('INSERT INTO Users(userID, photo) VALUE(:id, :photo)');
     $stmt->bindParam(':id', $userID);
     $stmt->bindParam(':photo', $photoPath);
 
