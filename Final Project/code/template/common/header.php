@@ -12,7 +12,7 @@
 
   </head>
   <link rel="stylesheet" type="text/css" href="../css/style.css">
-<body >
+<body>
 <div id="container">
   <div id="menu-bar">
     <header>

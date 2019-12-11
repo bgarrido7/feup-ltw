@@ -1,4 +1,4 @@
-<div id="content">
+<div id="lists">
 
     <h3>name: <?php echo htmlentities($houseName);  ?></h3>
     <p>location: <?php echo htmlentities($local);  ?></p>

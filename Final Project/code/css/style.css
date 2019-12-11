@@ -113,14 +113,19 @@ aside {
     color:black;
   }
 
-
 #homepage{
     background-color: pink;
     grid-area: content;
   }
 #content{
 color:black;
+grid-area: content;
 
+}
+
+#lists{
+    top:0;
+    left: 15%;
 }
 #content a:hover{
     color:yellow;
