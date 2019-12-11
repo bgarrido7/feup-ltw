@@ -75,23 +75,29 @@ aside {
 height: 87%; 
 width: 15%; 
 /*position: fixed;
-*/z-index: 1; /* Stay on top */
+z-index: 1; /* Stay on top */
 top: 7%; 
 left: 0;
   }
 
 
-  #homepage{
-background-color: red;
+#homepage{
+background-color: pink;
 height: 87%; 
 width: 85%; 
 /*position: fixed;
-*/z-index: 1; /* Stay on top */
+z-index: 1; /* Stay on top */
 top: 7%; 
 left: 15%;
   }
 #content{
 color:black;
+height: 87%; 
+width: 85%; 
+/*position: fixed;
+z-index: 1; /* Stay on top */
+top: 7%; 
+left: 25%;
 }
 #content a:hover{
     color:yellow;

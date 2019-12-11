@@ -4,9 +4,9 @@
     <input name="email" type="hidden" value="<?php $_SESSION['email'] ?>">
 
         <label>Username</label>
-        <input name="name" class="w3-input w3-border" type="text" placeholder="<?php echo getName(getID($_SESSION['email'])['userID']); ?>" ></br> </br>
+        <input name="name" class="w3-input w3-border" type="text" placeholder="<?php echo htmlentities($name); ?>" ></br> </br>
         <label>Birthday</label>
-       <input name="bday" class="w3-input w3-border" type="date" value="<?php echo getBirthday($_SESSION['email'])['birthday']; ?>"></br></br>
+       <input name="bday" class="w3-input w3-border" type="date" value="<?php echo htmlentities($bday);?>"></br></br>
        <label>Password</label>
         <input name="pword" class="w3-input w3-border" type="password" placeholder="New Password">
         <input name="repeatPword" class="w3-input w3-border" type="password" placeholder="Repeat New Password"></br></br>
@@ -14,6 +14,7 @@
     </form>  
 </div>
 
+<img src="../images/users/<?php echo htmlentities($userID);  ?>.jpg" alt="owner" width="12%" height="25%">
 
 <!--
 <div id="photo_field">
