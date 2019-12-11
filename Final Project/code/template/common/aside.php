@@ -9,6 +9,7 @@
   <ul><a href="whishlist.php">Whishlist</a></ul>
   <ul><a href="profile.php">My Profile</a></ul>
 </div>
+
 <div id="logout">
 <a href="../actions/action_logout.php">logout</a>
 </div>

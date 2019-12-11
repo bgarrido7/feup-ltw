@@ -16,11 +16,6 @@
       <div id="info">
         <img src="../images/site/logo.png" alt="logo" width="50%">
         <h1><a>Jūkyo</a></h1>
-     <!--     <i class="fa fa-home"></i> </br>
-        <i class="fa fa-hotel"></i>(0)</br>
-      <a href="list_cart.php"><i class="fa fa-search"></i> search</a>
-        <a href="list_cart.php"><i class="fas fa-torii-gate"></i> </br>
-     --> 
     </div>
   
       <div id="user">
