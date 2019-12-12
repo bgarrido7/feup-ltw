@@ -1,6 +1,6 @@
 <div id="content">
     <h1> <?php echo htmlentities($houseName);  ?></h1>
-    <div>
+    <div id="owner">
         <h3>Owner: <?php echo htmlentities($owner);  ?>, <?php echo htmlentities($age);  ?> </h3>
         <img src="../images/users/<?php echo htmlentities($ownerID);  ?>.jpg" alt="owner" width="10%" height="20%">
     </div>

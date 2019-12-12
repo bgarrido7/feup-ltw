@@ -51,6 +51,7 @@ body input[type=submit]{
         color:red;
 
   }
+
   /*
   #login {
     display: grid;
@@ -106,9 +107,26 @@ body input[type=submit]{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;   
 }
 
-#logout{
-    bottom: 0;
+#logout a:link, a:visited{
+    color:red;
+    text-decoration: underline;
+    position:relative;                  
+    bottom:0;                          
+    left:0;
 }
+
+#owner{
+float:right;
+}
+
+#profile_image img{
+    float:right;
+    right: 10%;
+}
+#search_by{
+    float:right;
+}
+
 
 #error{
 margin-top:3%;

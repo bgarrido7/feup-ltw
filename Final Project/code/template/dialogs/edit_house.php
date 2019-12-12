@@ -4,8 +4,9 @@
     Name: <input type="text" name="name"  placeholder="<?php echo htmlentities($name); ?>"><br />
     <label> Location:
         <select name="city">
+        <option disabled selected value> select an option </option>
             <option value="usa">USA</option>
-            <option value="sw" selected>Switzerland</option>
+            <option value="sw">Switzerland</option>
             <option value="pt">Portugal</option>
             <option value="poland">Poland</option>
             <option value="croatia">Croatia</option>
