@@ -49,7 +49,7 @@ body input[type=submit]{
 
   #construction a:link, a:visited{
         color:red;
-        
+
   }
   /*
   #login {
@@ -115,14 +115,13 @@ margin-top:3%;
 color:#8B0000;
 
 }
-#sidebar a:visited, a:link{
+#sidebar a{
     color:#203354;
 }
 #sidebar {
     grid-area: aside;
     background-color: #dee2ec;
     overflow-y: hidden;
-    color:#203354;
   }
 
 #homepage{
