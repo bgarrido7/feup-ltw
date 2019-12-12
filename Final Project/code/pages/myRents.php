@@ -38,6 +38,9 @@ foreach(getOwnerHouses($owner) as $row){
     }
     $oldRow=$row['houseID'];
 }
+?>
+</div></br>p</br></br>
+<?php 
 
 include_once("../template/common/footer.php");
 

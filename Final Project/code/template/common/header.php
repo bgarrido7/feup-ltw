@@ -14,11 +14,8 @@
   <link rel="stylesheet" type="text/css" href="../css/style.css">
 <body>
 <div id="container">
-  <div id="menu-bar">
-    <header>
-      <nav>
+  
+    <header id="menu-bar">
       <a href="../pages/homepage.php"><img src="../images/site/logo.png" alt="logo" width="50px"></a>
-          <a href="../pages/homepage.php">Jūkyo</a>
-  </nav>
-  </header>
-  </div>
+      <a href="../pages/homepage.php" >Jūkyo</a>
+    </header>

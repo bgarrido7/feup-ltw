@@ -17,6 +17,9 @@ foreach(getTouristStays($touristID) as $row){
 
     include("../template/content/list_reserv.php");
 }
+?>
+</div>
+<?php
 
 include_once("../template/common/footer.php");
 

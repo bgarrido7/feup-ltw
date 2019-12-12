@@ -12,3 +12,5 @@
 <input type="hidden" name="arrival" value="<?php echo $guest['arriveDate'];  ?>">
 <input type="submit" name="submit" value="Delete Reservation">
 </form>
+
+

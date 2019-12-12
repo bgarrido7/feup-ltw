@@ -23,12 +23,35 @@ body input[type=submit]{
     grid-template-columns: 0.2fr auto;
     grid-template-rows: 0.1fr auto 0.1fr;
     grid-template-areas:
-      "header header "
+      "header header"
       "aside content"
       "footer footer";
       height: 100%;
   }
-/*
+  #container_with_float {
+    display: grid;
+    grid-template-columns: 0.2fr auto;
+    grid-template-rows: 0.1fr auto 0.1fr;
+    grid-template-areas:
+      "header header header"
+      "aside content float"
+      "footer footer footer";
+      height: 100%;
+  }
+
+  #construction{
+
+    background-image: url("../images/temple_contruct.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  #construction a:link, a:visited{
+        color:red;
+        
+  }
+  /*
   #login {
     display: grid;
     grid-template-columns: 0.2fr auto;
@@ -71,25 +94,16 @@ body input[type=submit]{
 #menu-bar a:visited,a:link{
     color: white;
     text-decoration: none;
-
 }
 #menu-bar{
     grid-area:header;
-    background-color: #203354;
+    background-color:#203354;
     width:  100%;
     position: sticky;
     color: white;
     text-decoration: none;  
     font-size: 200%;  
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
-}
-#menu-bar a:visited{
-    padding-bottom: 50%;
-    
-}
-#menu-bar h1{
-    font-size: x-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;   
 }
 
 #logout{
@@ -101,22 +115,22 @@ margin-top:3%;
 color:#8B0000;
 
 }
-
-aside a:visited, a:link{
-    color:#203354
+#sidebar a:visited, a:link{
+    color:#203354;
 }
-aside {
+#sidebar {
     grid-area: aside;
-
     background-color: #dee2ec;
     overflow-y: hidden;
-    color:black;
+    color:#203354;
   }
 
 #homepage{
     background-color: pink;
-    grid-area: content;
-  }
+   grid-area: content;
+  
+ }
+
 #content{
 color:black;
 grid-area: content;
@@ -128,7 +142,7 @@ grid-area: content;
     left: 15%;
 }
 #content a:hover{
-    color:yellow;
+    color:white;
     }
 
 

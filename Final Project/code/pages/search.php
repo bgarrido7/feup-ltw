@@ -4,6 +4,10 @@ include_once('../includes/init.php');
 
 include_once("../template/common/aside.php");
 include_once('../database/houses.php');
+include_once("../template/titles/search.php");
+?>
+<div>
+<?php
 
 foreach(getAllHouses() as $house){
 
@@ -22,7 +26,10 @@ foreach(getAllHouses() as $house){
 include("../template/content/list_all_houses.php");
 
 }
+?>
+</div>
 
+<?php
 
 include_once("../template/common/footer.php");
 ?>

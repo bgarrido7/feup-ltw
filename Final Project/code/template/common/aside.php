@@ -1,6 +1,6 @@
 
 
-<aside id="sidebar">
+<div id="sidebar">
 <div>
   <ul><a href="search.php">Search Houses</a></ul>
   <ul><a href="myReservations.php">Reservations</a></ul>
@@ -14,4 +14,4 @@
 <a href="../actions/action_logout.php">logout</a>
 </div>
 
-</aside>
+</div>
