@@ -46,7 +46,7 @@ else
 $kitchen=0;
 //----------------------------------------------------
 
-editHouse($name,$desc, $houseID, $price, $local, $pool, $cable, $wifi, $ac, $kitchen );
+$result=editHouse($name,$desc, $houseID, $price, $local, $pool, $cable, $wifi, $ac, $kitchen );
 
 header('Location:  ../pages/myHouses.php');
 
