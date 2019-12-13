@@ -2,10 +2,7 @@
 include_once('../includes/init.php');
 include_once('../database/rents.php');
 
-if(isset($_POST['houseID']))
 $houseID=$_POST['houseID'];
-else 
-$houseID=$_SESSION['houseID'];
 
   $init=$_POST['init'];
   $end=$_POST['end'];
@@ -32,20 +29,21 @@ $houseID=$_SESSION['houseID'];
   if(strcmp($init,$end)>=0){
     $_SESSION['error']="departure date must be after arrival date";
     $_SESSION['houseID']=$houseID;
-
+    header('Location:  ../pages/house.php' );
   }
+
 else if($booked){
   $_SESSION['error']="dates already booked";
   $_SESSION['houseID']=$houseID;
+  header('Location:  ../pages/house.php');
 
 
   }
   else {
     unset( $_SESSION['error']);
     addDates($touristID, $houseID, $init, $stayLength) ;
-
+    header('Location:  ../pages/myReservations.php');
 
   }
-  header('Location:  ../pages/house.php');
 
 ?>

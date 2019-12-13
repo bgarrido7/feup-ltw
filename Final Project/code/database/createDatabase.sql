@@ -7,7 +7,7 @@ CREATE TABLE Users(
 	name TEXT NOT NULL,
 	password BLOB NOT NULL,
 	birthday DATE,
-	email TEXT UNIQUE NOT NULL,
+	email TEXT UNIQUE NOT NULL
 );
 
 DROP TABLE IF EXISTS Houses;
@@ -22,7 +22,7 @@ CREATE TABLE Houses(
 	cableTV BIT NOT NULL,
 	Wifi BIT NOT NULL,
 	AC BIT NOT NULL,
-	kitchen Bit NOT NULL,
+	kitchen Bit NOT NULL
 );
 
 DROP TABLE IF EXISTS Owners;

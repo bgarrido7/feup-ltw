@@ -6,10 +6,12 @@ include_once('../database/user.php');
 include_once('../database/rents.php');
 include_once("../template/common/aside.php");
 
-if(isset( $_POST['id']))
+
+if(!empty($_POST['id']))
     $houseID = $_POST['id'];
+
 else
-    $houseID= $_SESSION['houseID'];
+    $houseID=$_SESSION['houseID'];
 
 $ownerID=getOwner($houseID)['userID'];
 
@@ -33,8 +35,8 @@ include_once("../template/content/house.php");
     if(strcmp($guestID, $ownerID) !== 0){
 
         $dates=getHouseTourists($houseID);
-        echo nl2br("\n\ndates already rented for this house: \n");
-
+        include_once("../template/dialogs/rent_dates_title.php");
+        
         foreach($dates as $index){
             $arrival=($index['arriveDate']); 
             $departure=(  date( "Y-m-d" , (strtotime($index['arriveDate']))  +  ($index['stayLength']) *(24*60*60) ) );
@@ -43,6 +45,7 @@ include_once("../template/content/house.php");
         }
         include_once("../template/dialogs/rent_house.php");
    
+        ?></div><?php
     }
 include_once('../template/common/footer.php');
 ?>

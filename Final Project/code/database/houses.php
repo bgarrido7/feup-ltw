@@ -117,4 +117,37 @@ function setHousePhoto($houseID, $photoPath) {
       return null;
     }
   }
+
+//======================================================
+
+function findHouseByName($word){
+    global $dbh;
+    $stmt = $dbh->prepare('SELECT * FROM Houses WHERE name LIKE lower(?) OR description LIKE LOWER(?)');
+    
+    $stmt->execute(array("%$word%", "%$word%"));
+    return $stmt->fetchAll();
+
+}
+//======================================================
+
+function findHouseByPrice($lower, $upper){
+    global $dbh;
+    $stmt = $dbh->prepare('SELECT * FROM Houses WHERE dailyPrice BETWEEN ? AND ?');
+    
+    $stmt->execute(array($lower, $upper));
+    return $stmt->fetchAll();
+
+}
+ //======================================================
+function findHouseByCity($city){
+
+    global $dbh;
+    $stmt = $dbh->prepare('SELECT * FROM Houses WHERE location=?');
+    
+    $stmt->execute(array($city));
+    return $stmt->fetchAll();
+ }
+
+
+
 ?>

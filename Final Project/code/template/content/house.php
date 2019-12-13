@@ -1,12 +1,13 @@
 <div id="content">
-    <h1> <?php echo htmlentities($houseName);  ?></h1>
     <div id="owner">
         <h3>Owner: <?php echo htmlentities($owner);  ?>, <?php echo htmlentities($age);  ?> </h3>
-        <img src="../images/users/<?php echo htmlentities($ownerID);  ?>.jpg" alt="owner" width="10%" height="20%">
-    </div>
+        <img src="../images/users/<?php echo htmlentities($ownerID);  ?>.jpg" alt="owner">
+    </div>    
+<h1> <?php echo htmlentities($houseName);  ?></h1>
+    
 </br>
-    <div>
-        <img src="../images/houses/<?php echo htmlentities($houseID);  ?>.jpg" alt="house" width="60%" height="50%">
+    <div id="house_presentation">
+        <img src="../images/houses/<?php echo htmlentities($houseID);  ?>.jpg" alt="house">
         <p>location: <?php echo htmlentities($local);  ?></p>
         <p>price per day: <?php echo htmlentities($price);  ?></p>
         <p>description: <?php echo htmlentities($desc);  ?></p>
@@ -16,5 +17,4 @@
         <p>AC? <?php echo htmlentities($ac);  ?></p>
         <p>kitchen? <?php echo htmlentities($kitchen);  ?></p>
     </div>
-</div>
 
