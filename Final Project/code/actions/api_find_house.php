@@ -1,9 +1,9 @@
 <?php
-
+include_once('../includes/init.php');
 include_once("../database/houses.php");
 
-$word = $_POST['search'];
-$city=$_POST['city'];
+$word = $_GET['filter'];
+/*$city=$_POST['city'];
 $lowerPrice=$_POST['lowerPrice'];
 $upperPrice=$_POST['upperPrice'];
 
@@ -12,11 +12,14 @@ $cable=$_POST['cable'];
 $wifi=$_POST['wifi'];
 $ac=$_POST['ac'];
 $kitchen=$_POST['kitchen'];
+*/
+ 
+$result = findHouseByName($word);
 
 
-if($city != "null") 
-    $result = findHouseByName($word);
+echo(json_encode($result));
 
+/*
 
 if($word != "null") 
     $cityResult = findHouseByCity($city);
@@ -45,9 +48,9 @@ if($ac != "null")
 if($kitchen != "null") 
     $kitchenResult = findHouseByKitchen();
 
+*/
 
-echo(json_encode($result));
-echo(json_encode($cityResult));
+/*echo(json_encode($cityResult));
 echo(json_encode($priceResult));
 
 echo(json_encode($poolResult));
@@ -56,5 +59,5 @@ echo(json_encode($wifiResult));
 echo(json_encode($acResult));
 echo(json_encode($kitchenResult));
 
-
+*/
 ?>

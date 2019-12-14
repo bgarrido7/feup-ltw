@@ -2,6 +2,7 @@
 
 <div id="lists">
 
+<!--
     <h3>name: <?php echo htmlentities($houseName);  ?></h3>
     <p>location: <?php echo htmlentities($local);  ?></p>
     <p>price per day: <?php echo htmlentities($price);  ?></p>
@@ -17,5 +18,5 @@
     <input type="hidden" name="id" value="<?php echo htmlentities($houseID); ?>"/>
     <input type="submit" value="see this house's page" />
     </form>
-
+-->
 </div>
