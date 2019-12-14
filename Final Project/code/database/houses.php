@@ -117,8 +117,9 @@ function setHousePhoto($houseID, $photoPath) {
       return null;
     }
   }
-
-//======================================================
+//=====================================================
+//=======================search by=====================
+//=====================================================
 
 function findHouseByName($word){
     global $dbh;
@@ -147,7 +148,53 @@ function findHouseByCity($city){
     $stmt->execute(array($city));
     return $stmt->fetchAll();
  }
+//======================================================
+//=====================search tags======================
+//======================================================
 
+ function findHouseByPool(){
 
+    global $dbh;
+    $stmt = $dbh->prepare('SELECT * FROM Houses WHERE pool=?');
+    
+    $stmt->execute(array('1'));
+    return $stmt->fetchAll();
+ }
+ //======================================================
+ function findHouseByTV(){
+
+    global $dbh;
+    $stmt = $dbh->prepare('SELECT * FROM Houses WHERE cableTV=?');
+    
+    $stmt->execute(array('1'));
+    return $stmt->fetchAll();
+ }
+ //======================================================
+ function findHouseByWifi(){
+
+    global $dbh;
+    $stmt = $dbh->prepare('SELECT * FROM Houses WHERE Wifi=?');
+    
+    $stmt->execute(array('1'));
+    return $stmt->fetchAll();
+ }
+ //======================================================
+ function findHouseByAC(){
+
+    global $dbh;
+    $stmt = $dbh->prepare('SELECT * FROM Houses WHERE AC=?');
+    
+    $stmt->execute(array('1'));
+    return $stmt->fetchAll();
+ }
+ //======================================================
+ function findHouseByKitchen(){
+
+    global $dbh;
+    $stmt = $dbh->prepare('SELECT * FROM Houses WHERE kitchen=?');
+    
+    $stmt->execute(array('1'));
+    return $stmt->fetchAll();
+ }
 
 ?>
