@@ -10,7 +10,7 @@
 <input type="hidden" name="owner" value="<?php echo "1"?>">
 <input type="hidden" name="touristID" value="<?php echo $guest['touristID']; ?>">
 <input type="hidden" name="arrival" value="<?php echo $guest['arriveDate'];  ?>">
-<input type="submit" name="submit" value="Delete Reservation">
+<input type="submit" name="submit" value="Delete Reservation" onclick="return confirm('Are you sure?');">
 </form>
 
 </div>
