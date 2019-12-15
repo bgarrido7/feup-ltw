@@ -41,20 +41,14 @@ else if(empty($resultCity) && !empty($resultWord) && !empty($resultPrice)){
                 array_push($result, $a);
         }
 }
-/*
+
 else if(!empty($resultCity) && !empty($resultWord) && !empty($resultPrice)){
     foreach($resultCity as $a){
-        if(in_array($a, $resultWord){ 
-
-            foreach($resultPrice as $p){
-                if( in_array($p, $resultWord) ){
-                    if($a['houseID']==$p['houseID'])
-                        array_push($result, $p);
-                }
-            }
-        }
+        if(in_array($a, $resultWord) && in_array($a, $resultPrice))
+            array_push($result, $a);
+    }
 }
-*/
+
 //======================só 1 filtro adicionado===========================
 else if($city!== "null" && empty($word) && empty($resultPrice))
     $result=$resultCity;
