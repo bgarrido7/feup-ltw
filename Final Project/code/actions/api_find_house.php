@@ -57,6 +57,14 @@ else if( $city=== "null" && !empty($word) && empty($resultPrice))
 else if( $city=== "null" && empty($word) && !empty($resultPrice))
     $result=$resultPrice;
 
+if(empty($resultCity) && $city!== "null")
+    $result=array();
+
+if(empty($resultWord) && !empty($word) )
+    $result=array();
+
+if(empty($resultPrice) && !empty($lower) &&  !empty($upper))
+    $result=array();
 
 echo(json_encode($result));
 

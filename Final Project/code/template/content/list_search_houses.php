@@ -13,7 +13,7 @@
     <p>kitchen? <?php echo htmlentities($kitchen);  ?></p>
 
 
-    <form action="../pages/house.php" method="post" >
+    <form action="../pages/house.php" method="get" >
     <input type="hidden" name="id" value="<?php echo htmlentities($houseID); ?>"/>
     <input type="submit" value="see this house's page" />
     </form>

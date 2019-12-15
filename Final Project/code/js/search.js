@@ -48,12 +48,14 @@ function requestHousesListener(){
        let houseDesc= document.createElement("ul");
        let houseLocat= document.createElement("li");
        let housePrice= document.createElement("li");
-             
+
+       //buttin to go to house's page
+        let btn = document.createElement('button');
+     
        houseName.innerHTML = resultHouses[i].name;
        houseDesc.innerHTML = resultHouses[i].description;
        houseLocat.innerHTML = "in " + resultHouses[i].location;
        housePrice.innerHTML = resultHouses[i].dailyPrice + "$ /day";
-       // house.setAttribute('',); //dar atributos aos divs ou wtv
 
        houses_list.appendChild(houseName);
        houses_list.appendChild(houseDesc);
@@ -79,6 +81,11 @@ function requestHousesListener(){
        houses_list.appendChild(ac);
        houses_list.appendChild(kitchen);
 
+     //  $_POST['id']=resultHouses[i].houseID;
+
+       btn.innerHTML="visit this house's page";
+       btn.setAttribute('onclick', "window.location.href = '../pages/house.php?id=" + resultHouses[i].houseID + "'");
+       houses_list.appendChild(btn);
     }
 }
 

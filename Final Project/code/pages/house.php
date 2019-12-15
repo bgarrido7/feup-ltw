@@ -7,8 +7,8 @@ include_once('../database/rents.php');
 include_once("../template/common/aside.php");
 
 
-if(!empty($_POST['id']))
-    $houseID = $_POST['id'];
+if(!empty($_GET['id']))
+    $houseID = $_GET['id'];
 
 else
     $houseID=$_SESSION['houseID'];
