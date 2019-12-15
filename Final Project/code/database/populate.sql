@@ -24,13 +24,30 @@ INSERT INTO Houses(name, location, dailyPrice, description, pool,cableTV, Wifi, 
 VALUES("party house for big groups of friends","Poland","20","no neighbours, go crazy, go wild kids. Perfect for snowy nights",0,0,1,1,1) ;
 
 INSERT INTO Houses(name, location, dailyPrice, description, pool,cableTV, Wifi, AC, kitchen)   
-VALUES("summer home","Spain","30","spend your summer vacation on this cozy house with a view to the village",1,1,1,0,1) ;
+VALUES("summer home","Portugal","30","spend your summer vacation on this cozy house with a view to the village",1,1,1,0,1) ;
+
+INSERT INTO Houses(name, location, dailyPrice, description, pool,cableTV, Wifi, AC, kitchen)   
+VALUES("country house in the suburbs","USA","100","perfect for families and old people",1,1,1,0,1) ;
+
+INSERT INTO Houses(name, location, dailyPrice, description, pool,cableTV, Wifi, AC, kitchen)   
+VALUES("another typical house","USA","50","nothing special, just your average house",1,1,1,0,1) ;
+
+INSERT INTO Houses(name, location, dailyPrice, description, pool,cableTV, Wifi, AC, kitchen)   
+VALUES("not a bad house","Portugal","20","just an ok house",1,1,1,0,1) ;
+
+INSERT INTO Houses(name, location, dailyPrice, description, pool,cableTV, Wifi, AC, kitchen)   
+VALUES("snowy and cozy house","USA","30","for people who like cold places",1,1,1,0,1) ;
 
 
 INSERT INTO Owners (userID, houseID) VALUES (1, 1);
 INSERT INTO Owners (userID, houseID) VALUES (3, 2);
-INSERT INTO Owners (userID, houseID) VALUES (1, 3);
-INSERT INTO Owners (userID, houseID) VALUES (1, 4);
+INSERT INTO Owners (userID, houseID) VALUES (4, 3);
+INSERT INTO Owners (userID, houseID) VALUES (4, 4);
+INSERT INTO Owners (userID, houseID) VALUES (2, 5);
+INSERT INTO Owners (userID, houseID) VALUES (3, 6);
+INSERT INTO Owners (userID, houseID) VALUES (2, 7);
+INSERT INTO Owners (userID, houseID) VALUES (3, 8);
+
 
 
 INSERT INTO Reservations (touristID, houseID, arriveDate, stayLength) 

@@ -26,7 +26,7 @@ function sendRequest_findHouses(){
 //    let lowerPrice=lower.value;
 //    let upperPrice=upper.value;
 
-    let requestData = {word: word};//, city: city};//, lowerPrice:lowerPrice, upperPrice:upperPrice};
+    let requestData = {word: word, city: city};//, lowerPrice:lowerPrice, upperPrice:upperPrice};
 
     //remove o que foi escrito anteriormente
     while (houses_list.firstChild) { 

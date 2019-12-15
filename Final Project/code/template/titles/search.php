@@ -6,31 +6,22 @@
         <i class="fa fa-search"></i>
         <input type="text" id="search" name="search">
         </br>
-
         <label> Location:
             <select name="city" id="city">
-                <option disabled selected value> select an option </option>
-                <option value="usa">USA</option>
-                <option value="sw">Switzerland</option>
-                <option value="pt">Portugal</option>
-                <option value="poland">Poland</option>
-                <option value="croatia">Croatia</option>
-                <option value="au">Australia</option>
+                <option value="null"> select an option </option>
+                <option value="USA">USA</option>
+                <option value="Switzerland">Switzerland</option>
+                <option value="Portugal">Portugal</option>
+                <option value="Poland">Poland</option>
+                <option value="Croatia">Croatia</option>
+                <option value="Australia">Australia</option>
             </select> 
         </label>
         </br>
-        
         <label>Price Range: 
             <input type="number" id="lowerPrice">
             <input type="number" id="upperPrice">
         </label>
-
-    </br>Additional Things: 
-        <input type="checkbox" name="pool" >Pool
-        <input type="checkbox" name="cable" >Cable TV
-        <input type="checkbox" name="wifi" >Wifi
-        <input type="checkbox" name="ac" >AC
-        <input type="checkbox" name="kitchen">Kitchen
     </div>
 
     <div id="filter_houses">
