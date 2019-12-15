@@ -6,20 +6,24 @@
         <i class="fa fa-search"></i>
         <input type="text" id="search" name="search">
         </br>
-        <label> Location:
-        <select name="city">
-        <option disabled selected value> select an option </option>
-            <option value="usa">USA</option>
-            <option value="sw">Switzerland</option>
-            <option value="pt">Portugal</option>
-            <option value="poland">Poland</option>
-            <option value="croatia">Croatia</option>
-            <option value="au">Australia</option>
-        </select> </label>
 
-        </br>Price Range: 
-        <input type="number" name="lowerPrice">
-        <input type="number" name="upperPrice">
+        <label> Location:
+            <select name="city" id="city">
+                <option disabled selected value> select an option </option>
+                <option value="usa">USA</option>
+                <option value="sw">Switzerland</option>
+                <option value="pt">Portugal</option>
+                <option value="poland">Poland</option>
+                <option value="croatia">Croatia</option>
+                <option value="au">Australia</option>
+            </select> 
+        </label>
+        </br>
+        
+        <label>Price Range: 
+            <input type="number" id="lowerPrice">
+            <input type="number" id="upperPrice">
+        </label>
 
     </br>Additional Things: 
         <input type="checkbox" name="pool" >Pool
@@ -30,6 +34,7 @@
     </div>
 
     <div id="filter_houses">
+        <!--o javascript vai aparecer aqui magicamente-->
     </div>
 
 </div>

@@ -24,6 +24,10 @@ body input[type=submit]{
     color:red;
 }
 
+#filter_houses h2{
+    color:yellow;
+}
+
 #new_house input[type=button]{
     float: right;
     margin-top: 2%;
