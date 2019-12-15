@@ -1,3 +1,11 @@
+/*  brandbook colors:
+#203354
+#dee2ec
+#f6f7f9
+#fb0023
+*/
+
+
 /*
 * GERAL
 */
@@ -6,6 +14,7 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    background-color: #f6f7f9;
 }
 body input[type=submit]{
     background-color:  #203354;
@@ -17,14 +26,28 @@ body input[type=submit]{
 }
 
 #delete input[type=submit]{
-    background-color:  red;   
+    background-color:  #fb0023;   
 }
 
 #filter_houses{
-    color:red;
+    color:black;
+}
+#filter_houses button{
+    color:white;
+    background-color:  #203354;
+    border: none;
+    padding: 1% 3%;
+    text-align: center;
+    border-radius: 4px;
 }
 
 #filter_houses h2{
+    color:yellow;
+}
+#filter_houses ul{
+    color:yellow;
+}
+#filter_houses li{
     color:yellow;
 }
 
@@ -64,7 +87,7 @@ body input[type=submit]{
   }
 
   #construction a:link, a:visited{
-        color:red;
+        color:#fb0023;
 
   }
 
@@ -87,7 +110,7 @@ body input[type=submit]{
 }
 #user a:link, a:visited{
     text-decoration: underline;
-    color: #FB0023;
+    color: #fb0023;
 }
 
 #info a:visited{
@@ -124,7 +147,7 @@ body input[type=submit]{
 }
 
 #logout a:link, a:visited{
-    color:red;
+    color:#fb0023;
     text-decoration: underline;
     position:relative;                  
     bottom:0;                          
@@ -156,7 +179,7 @@ margin-right: 5%;
 
 #error{
 margin-top:3%;
-color:#8B0000;
+color:#fb0023;
 
 }
 #sidebar a{
