@@ -7,8 +7,8 @@ let search_bar=document.querySelector("input#search");
 let dropdown_list= document.getElementById("city");
 
 //price range
-//let lower= document.getElementById("lowerPrice");
-//let upper= document.getElementById("upperPrice");
+let lower= document.getElementById("lowerPrice");
+let upper= document.getElementById("upperPrice");
 
 let ajaxRequestFindHouses = new XMLHttpRequest();
 const api_find_houses = "../actions/api_find_house.php";
@@ -23,10 +23,10 @@ function sendRequest_findHouses(){
     let word=search_bar.value;
     let city=dropdown_list.value;
 
-//    let lowerPrice=lower.value;
-//    let upperPrice=upper.value;
+    let lowerPrice=lower.value;
+    let upperPrice=upper.value;
 
-    let requestData = {word: word, city: city};//, lowerPrice:lowerPrice, upperPrice:upperPrice};
+    let requestData = {word: word, city: city, lowerPrice:lowerPrice, upperPrice:upperPrice};
 
     //remove o que foi escrito anteriormente
     while (houses_list.firstChild) { 
@@ -84,5 +84,5 @@ function requestHousesListener(){
 
 search_bar.addEventListener('keyup',sendRequest_findHouses);
 dropdown_list.addEventListener("change", sendRequest_findHouses)
-//lower.addEventListener('keyup',sendRequest_findHouses);
-//upper.addEventListener('keyup',sendRequest_findHouses);
+lower.addEventListener('keyup',sendRequest_findHouses);
+upper.addEventListener('keyup',sendRequest_findHouses);
