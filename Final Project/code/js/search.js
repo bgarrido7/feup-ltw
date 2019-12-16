@@ -44,6 +44,9 @@ function requestHousesListener(){
     console.log(resultHouses);
 
     for(let i=0; i<resultHouses.length;i++){
+
+       let houseDiv = document.createElement("div");
+       houseDiv.setAttribute('class', "single_house");
        let houseName= document.createElement("h2");
        let houseDesc= document.createElement("ul");
        let houseLocat= document.createElement("li");
@@ -57,10 +60,10 @@ function requestHousesListener(){
        houseLocat.innerHTML = "in " + resultHouses[i].location;
        housePrice.innerHTML = resultHouses[i].dailyPrice + "$ /day";
 
-       houses_list.appendChild(houseName);
-       houses_list.appendChild(houseDesc);
-       houses_list.appendChild(houseLocat);
-       houses_list.appendChild(housePrice);
+       houseDiv.appendChild(houseName);
+       houseDiv.appendChild(houseDesc);
+       houseDiv.appendChild(houseLocat);
+       houseDiv.appendChild(housePrice);
     
        //===================house TAGS================================
        let pool= document.createElement("li");
@@ -69,23 +72,23 @@ function requestHousesListener(){
        let ac= document.createElement("li");
        let kitchen= document.createElement("li");
 
-       pool.innerHTML = "pool? " + resultHouses[i].pool;
-       tv.innerHTML = "cable TV? " + resultHouses[i].cableTV;
-       wifi.innerHTML = "wifi? " + resultHouses[i].Wifi;
-       ac.innerHTML = "AC? " + resultHouses[i].AC;
-       kitchen.innerHTML ="kitchen? " +  resultHouses[i].kitchen;
+       pool.innerHTML = "pool? " + (resultHouses[i].pool === "1" ? "Yes" : "No");
+       tv.innerHTML = "cable TV? " + (resultHouses[i].cableTV === "1" ? "Yes" : "No");
+       wifi.innerHTML = "wifi? " + (resultHouses[i].Wifi === "1" ? "Yes" : "No");
+       ac.innerHTML = "AC? " + (resultHouses[i].AC === "1" ? "Yes" : "No");
+       kitchen.innerHTML ="kitchen? " +  (resultHouses[i].kitchen === "1" ? "Yes" : "No");
 
-       houses_list.appendChild(pool);
-       houses_list.appendChild(tv);
-       houses_list.appendChild(wifi);
-       houses_list.appendChild(ac);
-       houses_list.appendChild(kitchen);
-
-     //  $_POST['id']=resultHouses[i].houseID;
+       houseDiv.appendChild(pool);
+       houseDiv.appendChild(tv);
+       houseDiv.appendChild(wifi);
+       houseDiv.appendChild(ac);
+       houseDiv.appendChild(kitchen);
 
        btn.innerHTML="visit this house's page";
        btn.setAttribute('onclick', "window.location.href = '../pages/house.php?id=" + resultHouses[i].houseID + "'");
-       houses_list.appendChild(btn);
+       houseDiv.appendChild(btn);
+
+       houses_list.appendChild(houseDiv);
     }
 }
 

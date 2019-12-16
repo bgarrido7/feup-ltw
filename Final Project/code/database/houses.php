@@ -58,7 +58,15 @@ function getHouseAttributes($houseID) {
     global $dbh;
     $stmt = $dbh->prepare('SELECT * FROM Houses WHERE houseID = ?');
     $stmt->execute(array($houseID));
-    return  $stmt->fetch();
+    $house = $stmt->fetch();
+
+    $house['pool'] = ($house['pool'] ? 'YES' : 'NO');
+    $house['cableTV'] = ($house['cableTV'] ? 'YES' : 'NO');
+    $house['Wifi'] = ($house['Wifi'] ? 'YES' : 'NO');
+    $house['AC'] = ($house['AC'] ? 'YES' : 'NO');    
+    $house['kitchen'] = ($house['kitchen'] ? 'YES' : 'NO');
+    
+    return $house;
 }
 //======================================================
 function getOwnerHouses($userID) {

@@ -17,11 +17,12 @@ foreach(findHouseByName("snow") as $house){
     $local=$house['location'];
     $price= $house['dailyPrice'];
     $desc= $house['description'];
-    $pool= $house['pool'];
-    $cable= $house['cableTV'];
-    $wifi=$house['Wifi'];
-    $ac= $house['AC'];
-    $kitchen= $house['kitchen'];
+
+    $pool= ($house['pool'] ==1 ? "yes" : "no");
+    $cable= ($house['cableTV'] ==1 ? "yes" : "no");
+    $wifi=($house['Wifi'] ==1 ? "yes" : "no");
+    $ac= ($house['AC'] ==1 ? "yes" : "no");
+    $kitchen= ($house['kitchen'] ==1 ? "yes" : "no");
 
 
 include("../template/content/list_search_houses.php");

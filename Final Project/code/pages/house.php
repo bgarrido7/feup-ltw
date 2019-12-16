@@ -9,7 +9,8 @@ include_once("../template/common/aside.php");
 
 if(!empty($_GET['id']))
     $houseID = $_GET['id'];
-
+else if(!empty($_POST['id']))
+$houseID = $_POST['id'];
 else
     $houseID=$_SESSION['houseID'];
 

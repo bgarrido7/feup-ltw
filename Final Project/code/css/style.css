@@ -1,20 +1,17 @@
 /*  brandbook colors:
-#203354
-#dee2ec
-#f6f7f9
-#fb0023
+#203354 ->dark blue
+#dee2ec ->light grey
+#f6f7f9 ->very light grey
+#fb0023 ->red
 */
 
-
-/*
-* GERAL
-*/
 body{
     margin: 0;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-color: #f6f7f9;
+    font-family: 'Droid Sans',"Raleway", sans-serif;
 }
 body input[type=submit]{
     background-color:  #203354;
@@ -29,9 +26,18 @@ body input[type=submit]{
     background-color:  #fb0023;   
 }
 
-#filter_houses{
-    color:black;
+#filter_houses div{
+    color:#203354;
+    border-style: solid;
+    border-color: #dee2ec;
+    background-color: #f6f7f9;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    width: 45vw;
+    margin-left: 2vw;
 }
+
 #filter_houses button{
     color:white;
     background-color:  #203354;
@@ -39,16 +45,22 @@ body input[type=submit]{
     padding: 1% 3%;
     text-align: center;
     border-radius: 4px;
+    margin-left: 70%;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
 }
 
-#filter_houses h2{
-    color:yellow;
+.single_house h2{
+    color:red;
+    margin-left: 3vw;
 }
-#filter_houses ul{
-    color:yellow;
+.single_house {
+    color:black;
+    margin-left: 3vw;
 }
-#filter_houses li{
-    color:yellow;
+.single_house li{
+    color:blue;
+    margin-left: 3vw;
 }
 
 #new_house input[type=button]{
