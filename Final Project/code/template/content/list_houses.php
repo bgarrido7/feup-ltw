@@ -1,3 +1,6 @@
+
+<div id="myHouses">
+
 <p>name: <?php echo htmlentities($houseName);  ?></p>
 <p>location: <?php echo htmlentities($local);  ?></p>
 <p>price per day: <?php echo htmlentities($price);  ?></p>
@@ -10,10 +13,12 @@
 
 <form action="house.php" method="post" >
     <input type="hidden" name="id" value="<?php echo htmlentities($houseID); ?>"/>
-    <input type="submit" value="see this house's page" />
+    <input type="submit" value="see this house's page" id="visit"/>
 </form>
     </br></br>
 <form action="editHouse.php" method="post" >
     <input type="hidden" name="houseID" value="<?php echo htmlentities($houseID); ?>"/>
-    <input type="submit" value="edit this house" />
+    <input type="submit" value="edit this house" id="edit"/>
 </form>
+
+</div>

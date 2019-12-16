@@ -12,6 +12,7 @@ body{
     background-size: 100% 100%;
     background-color: #f6f7f9;
     font-family: 'Droid Sans',"Raleway", sans-serif;
+    color: #203354;
 }
 body input[type=submit]{
     background-color:  #203354;
@@ -20,10 +21,8 @@ body input[type=submit]{
     padding: 1% 3%;
     text-align: center;
     border-radius: 4px;
-}
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-#delete input[type=submit]{
-    background-color:  #fb0023;   
 }
 
 #filter_houses div{
@@ -38,28 +37,80 @@ body input[type=submit]{
     margin-left: 2vw;
 }
 
+#rents, #myHouses{
+    color:#203354;
+    border-style: solid;
+    border-color: #dee2ec;
+    background-color: #f6f7f9;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    width: 45vw;
+    margin-left: 2vw;
+}
+
+#myHouses{
+    height: 25%;
+}
+
+#edit{
+    color:#203354;
+    background-color:  #f6f7f9;
+    text-decoration: underline;
+    box-shadow: 0 0 0 0 rgb(255, 255, 255);
+    margin-left: 78%;
+    margin-top: -15%;
+
+}
+
+
+#visit{
+    color:white;
+    background-color:  #203354;
+    border: none;
+    border-radius: 25px;
+    padding: 1% 3%;
+    text-align: center;
+    border-radius: 4px;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+#rents h3{
+    margin-left: 2%;
+}
+#rents input[type="submit"]{
+    background-color:  #fb0023;  
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-left:70% ;
+}
+
 #filter_houses button{
     color:white;
     background-color:  #203354;
     border: none;
+    border-radius: 25px;
     padding: 1% 3%;
     text-align: center;
     border-radius: 4px;
     margin-left: 70%;
     margin-top: 2vh;
     margin-bottom: 2vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
-.single_house h2{
-    color:red;
-    margin-left: 3vw;
+img{
+    border-radius: 5px;
 }
-.single_house {
-    color:black;
+
+.single_house{
     margin-left: 3vw;
+    color:  #203354;
 }
+
 .single_house li{
-    color:blue;
     margin-left: 3vw;
 }
 
@@ -73,6 +124,8 @@ body input[type=submit]{
     padding: 1% 3%;
     text-align: center;
     border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 /*
@@ -98,8 +151,14 @@ body input[type=submit]{
     background-size: 100% 100%;
   }
 
+  #construction a:first-child{
+    margin-left: 5vw;
+    font-size: large;
+}
+
   #construction a:link, a:visited{
         color:#fb0023;
+        font-size: large;
 
   }
 
@@ -158,13 +217,7 @@ body input[type=submit]{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;   
 }
 
-#logout a:link, a:visited{
-    color:#fb0023;
-    text-decoration: underline;
-    position:relative;                  
-    bottom:0;                          
-    left:0;
-}
+
 
 #house_presentation img{
     width: 50vw;
@@ -194,20 +247,56 @@ margin-top:3%;
 color:#fb0023;
 
 }
-#sidebar a{
-    color:#203354;
+#sidebar ul:first-child{
+    margin-top:2vh;
 }
 #sidebar {
     grid-area: aside;
     background-color: #dee2ec;
     overflow-y: hidden;
-  }
 
+  }
+  #sidebar a{
+    color:#203354;
+  }
+  #logout {
+    text-decoration: underline;
+    margin-top:53vh;
+    margin-left: 2vw;
+    color:#fb0023;
+
+}
+#logout a{
+    color:#fb0023;
+}
 #homepage{
-    background-color: pink;
+    background-color: #c54245;
    grid-area: content;
+   color: #dee2ec;
   
  }
+ 
+ #homepage h1, h2{
+ margin-left: 2vw;
+ }
+
+ #homepage input[type=submit]{
+    color:white;
+    background-color:  #203354;
+    border: none;
+    padding: 1% 3%;
+    text-align: center;
+    border-radius: 4px;
+    margin-left: 70%;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+#profile{
+    margin-left: 3vw;
+}
  #profile_info {
  float:right;
  margin-right: 5%;
@@ -233,12 +322,30 @@ color:#fb0023;
 #content{
 color:black;
 grid-area: content;
+margin-left: 2vw;
 
 }
+
+
 
 #lists{
     top:0;
     left: 15%;
+    border-radius: 15px;
+    color:#f6f7f9;
+    border-style: solid;
+    border-color: #dee2ec;
+    background-color: #dee2ec;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    width: 45vw;
+    margin-left: 2vw;
+}
+
+
+#lists h3, p, form{
+  margin-left: 2vw;  
 }
 #content a:hover{
     color:white;
