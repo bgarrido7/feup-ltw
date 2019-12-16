@@ -12,7 +12,8 @@ if($name!=null){
     if(updateUserInfo(getID($email)['userID'], $name)){
         setCurrentUser(getID($email)['userID'],$email);
         unset($_SESSION['error']); 
-   
+        header('Location:  ../pages/homepage.php');
+
     }
     else{
         $_SESSION['error']="error updating profile";
@@ -25,6 +26,7 @@ if(getBirthday($email)['birthday'] != $bday){
         
     if(updateBday(getID($email)['userID'], $bday)){
         unset($_SESSION['error']); 
+        header('Location:  ../pages/homepage.php');
 
     }
 
@@ -43,15 +45,14 @@ if($pword!=null){
     else{
         $result=updatePassword(getID($email)['userID'], $pword);
         if ($result)
-            unset($_SESSION['error']); 
-       else{          
+            header('Location:  ../pages/homepage.php');
+        else{          
          $_SESSION['error']="error updating password";
          header('Location:  ../pages/profile.php');
     }  
 }
 
     }
-header('Location:  ../pages/homepage.php');
    
 
     /*-----------------------------------------------------------------------------------

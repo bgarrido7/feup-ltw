@@ -4,12 +4,12 @@
     Name: <input type="text" name="name"  placeholder="<?php echo htmlentities($name); ?>"><br />
     <label> Location:
         <select name="city">
-            <option value="usa">USA</option>
-            <option value="sw">Switzerland</option>
-            <option value="pt">Portugal</option>
-            <option value="poland">Poland</option>
-            <option value="croatia">Croatia</option>
-            <option value="au">Australia</option>
+            <option value="USA">USA</option>
+            <option value="Switzerland">Switzerland</option>
+            <option value="Portugal">Portugal</option>
+            <option value="Poland">Poland</option>
+            <option value="Croatia">Croatia</option>
+            <option value="Australia">Australia</option>
         </select>
                 </label>
     Price per day: <input type="number" name="price" placeholder="<?php echo htmlentities($price);?>"> <br/>
