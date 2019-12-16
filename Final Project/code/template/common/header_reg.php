@@ -15,6 +15,6 @@
 <div id="container">
   
     <header id="menu-bar">
-      <a href= "../pages/homepage.php"><img src="../images/site/logo.png" alt="logo" width="50px"></a>
-      <a href= "../pages/homepage.php">Jūkyo</a>
+      <a href= "../index.php"><img src="../images/site/logo.png" alt="logo" width="50px"></a>
+      <a href= "../index.php">Jūkyo</a>
     </header>
