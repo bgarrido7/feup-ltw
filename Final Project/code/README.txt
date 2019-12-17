@@ -3,7 +3,7 @@ Grupo 48
 -----nome-------|--% trabalho feito---
 
 Beatriz Garrido	|	95%
-Pedro Lima	|	5%
+Pedro Lima      |	5%
 Mariana Soares	|	0%
 
 --------------------------------------

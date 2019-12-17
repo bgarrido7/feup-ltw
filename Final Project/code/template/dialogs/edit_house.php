@@ -1,7 +1,7 @@
 <section id="adition">
    <form action="../actions/action_edit_house.php" method="post" enctype="multipart/form-data">
    <input type="hidden" name="houseID" value="<?php echo htmlentities($houseID);  ?>"/>
-    Name: <input type="text" name="name"  placeholder="<?php echo htmlentities($name); ?>"><br />
+    Name: <input type="text" name="name"  placeholder="<?php echo htmlentities($name); ?>"></br ></br>
     <label> Location:
         <select name="city">
             <option value="USA">USA</option>
@@ -11,9 +11,9 @@
             <option value="Croatia">Croatia</option>
             <option value="Australia">Australia</option>
         </select>
-                </label>
-    Price per day: <input type="number" name="price" placeholder="<?php echo htmlentities($price);?>"> <br/>
-    Description: <textarea name="desc" rows="4" cols="50" placeholder="<?php echo  htmlentities($desc);?>"></textarea>
+                </label></br></br>
+    Price per day: <input type="number" name="price" placeholder="<?php echo htmlentities($price);?>"> </br></br>
+    Description: <textarea name="desc" rows="4" cols="50" placeholder="<?php echo  htmlentities($desc);?>"></textarea></br>
     
   <ul>Aditional things
   <ul>  Pool: <input type="checkbox"  name="pool"></ul>

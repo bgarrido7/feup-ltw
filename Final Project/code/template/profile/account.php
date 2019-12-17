@@ -2,7 +2,7 @@
 
     <div id=profile>
         <div id="profile_info">
-            <img src="../images/users/<?php echo htmlentities($userID);  ?>.jpg" alt="userPic" width="12%" height="25%">
+            <img src="../images/users/<?php echo htmlentities($userID);  ?>.jpg" alt="userPic">
             <p><?php echo htmlentities($name);?>, <?php echo htmlentities($age);?> </p>
         </div>
 

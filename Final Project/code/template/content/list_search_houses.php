@@ -2,15 +2,16 @@
 
 <div id="lists">
 
-    <h3>name: <?php echo htmlentities($houseName);  ?></h3>
-    <p>location: <?php echo htmlentities($local);  ?></p>
-    <p>price per day: <?php echo htmlentities($price);  ?></p>
-    <p>description: <?php echo htmlentities($desc);  ?></p>
-    <p>has pool? <?php echo htmlentities($pool);  ?></p>
-    <p>cable TV? <?php echo htmlentities($cable);  ?></p>
-    <p>wifi? <?php echo htmlentities($wifi);  ?></p>
-    <p>AC? <?php echo htmlentities($ac);  ?></p>
-    <p>kitchen? <?php echo htmlentities($kitchen);  ?></p>
+    <h3>Name: <?php echo htmlentities($houseName);  ?></h3>
+    <p>Location: <?php echo htmlentities($local);  ?></p>
+    <p>Price per day: <?php echo htmlentities($price);  ?>$ /day</p>
+    <p>Description: <?php echo htmlentities($desc);  ?></p>
+
+    <li>has pool? <?php echo htmlentities($pool);  ?></li>
+    <li>cable TV? <?php echo htmlentities($cable);  ?></li>
+    <li>wifi? <?php echo htmlentities($wifi);  ?></li>
+    <li>AC? <?php echo htmlentities($ac);  ?></li>
+    <li>kitchen? <?php echo htmlentities($kitchen);  ?></li>
 
 
     <form action="../pages/house.php" method="get" >

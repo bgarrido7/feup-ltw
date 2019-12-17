@@ -12,7 +12,6 @@
   </head>
   <link rel="stylesheet" type="text/css" href="../css/style.css">
 <body>
-<div id="container">
   
     <header id="menu-bar">
       <a href= "../index.php"><img src="../images/site/logo.png" alt="logo" width="50px"></a>

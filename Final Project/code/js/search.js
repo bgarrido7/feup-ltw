@@ -49,14 +49,14 @@ function requestHousesListener(){
        houseDiv.setAttribute('class', "single_house");
        let houseName= document.createElement("h2");
        let houseDesc= document.createElement("ul");
-       let houseLocat= document.createElement("li");
-       let housePrice= document.createElement("li");
+       let houseLocat= document.createElement("ul");
+       let housePrice= document.createElement("ul");
 
        //buttin to go to house's page
         let btn = document.createElement('button');
      
        houseName.innerHTML = resultHouses[i].name;
-       houseDesc.innerHTML = resultHouses[i].description;
+       houseDesc.innerHTML = "Description: " + resultHouses[i].description;
        houseLocat.innerHTML = "in " + resultHouses[i].location;
        housePrice.innerHTML = resultHouses[i].dailyPrice + "$ /day";
 

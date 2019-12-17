@@ -1,1 +1,3 @@
-<h1>dates already rented for this house</h1>
+
+<div id="dates">
+<h1>Dates already rented for this house</h1>

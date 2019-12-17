@@ -1,3 +1,3 @@
 <div id="content">
 
-<h2>My rented houses:</h2>
+<h1>My rented houses:</h1>

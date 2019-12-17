@@ -1,3 +1,3 @@
 
-<p>from <?php echo htmlentities($arrival);  ?>
- to <?php echo htmlentities($departure);  ?> </p>
+<p><b>from </b><?php echo htmlentities($arrival);  ?>
+ <b>to </b><?php echo htmlentities($departure);  ?> </p>

@@ -5,7 +5,7 @@
     <div id="search_by">
         <i class="fa fa-search"></i>
         <input type="text" id="search" name="search">
-        </br>
+        </br></br>
         <label> Location:
             <select name="city" id="city">
                 <option value="null"> select an option </option>
@@ -17,9 +17,9 @@
                 <option value="Australia">Australia</option>
             </select> 
         </label>
-        </br>
-        <label>Price Range: 
-            <input type="number" id="lowerPrice">
+        </br></br>
+        <label>Price Range: </br>
+          <input type="number" id="lowerPrice"> to
             <input type="number" id="upperPrice">
         </label>
     </div>

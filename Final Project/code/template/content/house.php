@@ -1,20 +1,24 @@
 <div id="content">
     <div id="owner">
-        <h3>Owner: <?php echo htmlentities($owner);  ?>, <?php echo htmlentities($age);  ?> </h3>
+        <h2>Meet the owner </h2>
         <img src="../images/users/<?php echo htmlentities($ownerID);  ?>.jpg" alt="owner">
-    </div>    
-<h1> <?php echo htmlentities($houseName);  ?></h1>
+
+        <h3><?php echo htmlentities($owner);  ?>, <?php echo htmlentities($age);  ?> </h3>
+      </div> 
+      <h1> <?php echo htmlentities($houseName);  ?></h1>
     
 </br>
-    <div id="house_presentation">
-        <img src="../images/houses/<?php echo htmlentities($houseID);  ?>.jpg" alt="house">
-        <p>location: <?php echo htmlentities($local);  ?></p>
-        <p>price per day: <?php echo htmlentities($price);  ?></p>
-        <p>description: <?php echo htmlentities($desc);  ?></p>
-        <p>has pool? <?php echo htmlentities($pool);  ?></p>
-        <p>cable TV? <?php echo htmlentities($cable);  ?></p>
-        <p>wifi? <?php echo htmlentities($wifi);  ?></p>
-        <p>AC? <?php echo htmlentities($ac);  ?></p>
-        <p>kitchen? <?php echo htmlentities($kitchen);  ?></p>
+<div id="house_presentation">
+    <img src="../images/houses/<?php echo htmlentities($houseID);  ?>.jpg" alt="house">
+      <div id="attributes">
+        <p><b>Location: </b><?php echo htmlentities($local);  ?></p>
+        <p><b>Price per day: </b><?php echo htmlentities($price);  ?></p>
+        <p><b>Description: </b><?php echo htmlentities($desc);  ?></p>
+        <li>has pool? <?php echo htmlentities($pool);  ?></li>
+        <li>cable TV? <?php echo htmlentities($cable);  ?></li>
+        <li>wifi? <?php echo htmlentities($wifi);  ?></li>
+        <li>AC? <?php echo htmlentities($ac);  ?></li>
+        <li>kitchen? <?php echo htmlentities($kitchen);  ?></li>
     </div>
+</div>
 
