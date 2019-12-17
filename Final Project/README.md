@@ -25,9 +25,7 @@
 - [x] Owners and tourists can cancel a reservation
 - [x] Tourists rent place
 
-## Screenshots
-
-**Brandbook:**
+### Brandbook
 
 <img src="https://github.com/bgarrido7/feup-ltw/blob/master/Final%20Project/design/brandbook.png">
 
